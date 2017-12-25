@@ -32,7 +32,8 @@
 // SS3 interrupts: enabled but not promoted to controller
 void ADC0_Init(void);
 
-
+int newvariable;
+// hello ,u name is eslam 
 
 //------------ADC0_In------------
 // Busy-wait Analog to digital conversion
