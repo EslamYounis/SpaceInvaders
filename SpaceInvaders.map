@@ -1,0 +1,1439 @@
+ARM Linker, 5.03 [Build 76] [MDK-ARM Lite]
+
+==============================================================================
+
+Section Cross References
+
+    startup.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(RESET) refers to startup.o(STACK) for StackMem
+    startup.o(RESET) refers to sound.o(i.SysTick_Handler) for SysTick_Handler
+    startup.o(RESET) refers to spaceinvaders.o(i.Timer2A_Handler) for Timer2A_Handler
+    startup.o(RESET) refers to texas.o(i.Timer4A_Handler) for Timer4A_Handler
+    startup.o(RESET) refers to texas.o(i.Timer5A_Handler) for Timer5A_Handler
+    startup.o(RESET) refers to __main.o(!!!main) for __main
+    startup.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(.text) refers to startup.o(HEAP) for HeapMem
+    startup.o(.text) refers to startup.o(STACK) for StackMem
+    nokia5110.o(i.Nokia5110_Clear) refers to nokia5110.o(i.lcdwrite) for lcdwrite
+    nokia5110.o(i.Nokia5110_Clear) refers to nokia5110.o(i.Nokia5110_SetCursor) for Nokia5110_SetCursor
+    nokia5110.o(i.Nokia5110_ClearBuffer) refers to nokia5110.o(.bss) for Screen
+    nokia5110.o(i.Nokia5110_DisplayBuffer) refers to nokia5110.o(i.Nokia5110_DrawFullImage) for Nokia5110_DrawFullImage
+    nokia5110.o(i.Nokia5110_DisplayBuffer) refers to nokia5110.o(.bss) for Screen
+    nokia5110.o(i.Nokia5110_DrawFullImage) refers to nokia5110.o(i.Nokia5110_SetCursor) for Nokia5110_SetCursor
+    nokia5110.o(i.Nokia5110_DrawFullImage) refers to nokia5110.o(i.lcdwrite) for lcdwrite
+    nokia5110.o(i.Nokia5110_Init) refers to nokia5110.o(i.lcdwrite) for lcdwrite
+    nokia5110.o(i.Nokia5110_OutChar) refers to nokia5110.o(i.lcdwrite) for lcdwrite
+    nokia5110.o(i.Nokia5110_OutChar) refers to nokia5110.o(.constdata) for ASCII
+    nokia5110.o(i.Nokia5110_OutString) refers to nokia5110.o(i.Nokia5110_OutChar) for Nokia5110_OutChar
+    nokia5110.o(i.Nokia5110_OutUDec) refers to nokia5110.o(i.Nokia5110_OutChar) for Nokia5110_OutChar
+    nokia5110.o(i.Nokia5110_PrintBMP) refers to nokia5110.o(.bss) for Screen
+    nokia5110.o(i.Nokia5110_SetCursor) refers to nokia5110.o(i.lcdwrite) for lcdwrite
+    random.o(.text) refers to random.o(DATA) for M
+    spaceinvaders.o(i.Game_Next_Level) refers to sprite.o(i.Sprites_Alive_Count) for Sprites_Alive_Count
+    spaceinvaders.o(i.Game_Next_Level) refers to nokia5110.o(i.Nokia5110_ClearBuffer) for Nokia5110_ClearBuffer
+    spaceinvaders.o(i.Game_Next_Level) refers to nokia5110.o(i.Nokia5110_Clear) for Nokia5110_Clear
+    spaceinvaders.o(i.Game_Next_Level) refers to nokia5110.o(i.Nokia5110_SetCursor) for Nokia5110_SetCursor
+    spaceinvaders.o(i.Game_Next_Level) refers to nokia5110.o(i.Nokia5110_OutString) for Nokia5110_OutString
+    spaceinvaders.o(i.Game_Next_Level) refers to nokia5110.o(i.Nokia5110_OutUDec) for Nokia5110_OutUDec
+    spaceinvaders.o(i.Game_Next_Level) refers to spaceship.o(i.Spaceship_Fire_Clear) for Spaceship_Fire_Clear
+    spaceinvaders.o(i.Game_Next_Level) refers to sprite.o(i.Sprite_Fire_Clear) for Sprite_Fire_Clear
+    spaceinvaders.o(i.Game_Next_Level) refers to spaceinvaders.o(i.Delay5ms) for Delay5ms
+    spaceinvaders.o(i.Game_Next_Level) refers to sprite.o(i.Play_Next_Level) for Play_Next_Level
+    spaceinvaders.o(i.Game_Next_Level) refers to spaceinvaders.o(.data) for GameLevel
+    spaceinvaders.o(i.Game_Over) refers to spaceinvaders.o(i.Delay5ms) for Delay5ms
+    spaceinvaders.o(i.Game_Over) refers to nokia5110.o(i.Nokia5110_Clear) for Nokia5110_Clear
+    spaceinvaders.o(i.Game_Over) refers to nokia5110.o(i.Nokia5110_SetCursor) for Nokia5110_SetCursor
+    spaceinvaders.o(i.Game_Over) refers to nokia5110.o(i.Nokia5110_OutString) for Nokia5110_OutString
+    spaceinvaders.o(i.Game_Over) refers to nokia5110.o(i.Nokia5110_OutUDec) for Nokia5110_OutUDec
+    spaceinvaders.o(i.Game_Over) refers to spaceinvaders.o(.data) for NumberOfTrials
+    spaceinvaders.o(i.Player_Change_Weapon) refers to switch.o(i.SW2_Pressed) for SW2_Pressed
+    spaceinvaders.o(i.Player_Change_Weapon) refers to sound.o(i.Sound_Highpitch) for Sound_Highpitch
+    spaceinvaders.o(i.Player_Change_Weapon) refers to spaceship.o(i.Spaceship_Change_Weapon) for Spaceship_Change_Weapon
+    spaceinvaders.o(i.Player_Change_Weapon) refers to spaceinvaders.o(.data) for SW2debounce
+    spaceinvaders.o(i.Player_Fire) refers to switch.o(i.SW1_Pressed) for SW1_Pressed
+    spaceinvaders.o(i.Player_Fire) refers to sound.o(i.Sound_Shoot) for Sound_Shoot
+    spaceinvaders.o(i.Player_Fire) refers to spaceship.o(i.Spaceship_Fire) for Spaceship_Fire
+    spaceinvaders.o(i.Player_Fire) refers to spaceinvaders.o(.data) for SW1debounce
+    spaceinvaders.o(i.Score_Update) refers to spaceinvaders.o(.data) for Score
+    spaceinvaders.o(i.ShieldGraphicsPtr_init) refers to graphics.o(i.Graphics_Bunker0) for Graphics_Bunker0
+    spaceinvaders.o(i.ShieldGraphicsPtr_init) refers to spaceinvaders.o(.bss) for ShieldGraphicsPtr
+    spaceinvaders.o(i.ShieldGraphicsPtr_init) refers to graphics.o(i.Graphics_Bunker1) for Graphics_Bunker1
+    spaceinvaders.o(i.ShieldGraphicsPtr_init) refers to graphics.o(i.Graphics_Bunker2) for Graphics_Bunker2
+    spaceinvaders.o(i.ShieldGraphicsPtr_init) refers to graphics.o(i.Graphics_Bunker3) for Graphics_Bunker3
+    spaceinvaders.o(i.Spcaeship_Alive) refers to sprite.o(i.Sprite_Fire_List) for Sprite_Fire_List
+    spaceinvaders.o(i.Spcaeship_Alive) refers to sprite.o(i.Sprites_Fire_Number) for Sprites_Fire_Number
+    spaceinvaders.o(i.Spcaeship_Alive) refers to spaceship.o(i.Spaceship_Data) for Spaceship_Data
+    spaceinvaders.o(i.Spcaeship_Alive) refers to graphics.o(i.Graphics_BigExplosion_Width) for Graphics_BigExplosion_Width
+    spaceinvaders.o(i.Spcaeship_Alive) refers to graphics.o(i.Graphics_BigExplosion_Height) for Graphics_BigExplosion_Height
+    spaceinvaders.o(i.Spcaeship_Alive) refers to graphics.o(i.Graphics_BigExplosion0) for Graphics_BigExplosion0
+    spaceinvaders.o(i.Spcaeship_Alive) refers to nokia5110.o(i.Nokia5110_PrintBMP) for Nokia5110_PrintBMP
+    spaceinvaders.o(i.Spcaeship_Alive) refers to nokia5110.o(i.Nokia5110_DisplayBuffer) for Nokia5110_DisplayBuffer
+    spaceinvaders.o(i.Spcaeship_Alive) refers to sound.o(i.Sound_Explosion) for Sound_Explosion
+    spaceinvaders.o(i.Spcaeship_Shield_Status) refers to sprite.o(i.Sprite_Fire_List) for Sprite_Fire_List
+    spaceinvaders.o(i.Spcaeship_Shield_Status) refers to sprite.o(i.Sprites_Fire_Number) for Sprites_Fire_Number
+    spaceinvaders.o(i.Spcaeship_Shield_Status) refers to spaceship.o(i.Spaceship_Shield_Data) for Spaceship_Shield_Data
+    spaceinvaders.o(i.Spcaeship_Shield_Status) refers to graphics.o(i.Graphics_SmallExplosion_Width) for Graphics_SmallExplosion_Width
+    spaceinvaders.o(i.Spcaeship_Shield_Status) refers to graphics.o(i.Graphics_SmallExplosion_Height) for Graphics_SmallExplosion_Height
+    spaceinvaders.o(i.Spcaeship_Shield_Status) refers to nokia5110.o(i.Nokia5110_PrintBMP) for Nokia5110_PrintBMP
+    spaceinvaders.o(i.Spcaeship_Shield_Status) refers to nokia5110.o(i.Nokia5110_DisplayBuffer) for Nokia5110_DisplayBuffer
+    spaceinvaders.o(i.Spcaeship_Shield_Status) refers to spaceinvaders.o(.bss) for ShieldGraphicsPtr
+    spaceinvaders.o(i.Spcaeship_Shield_Status) refers to spaceinvaders.o(.data) for ShieldLifeLevel
+    spaceinvaders.o(i.Sprites_Life) refers to spaceship.o(i.Spaceship_Fire_List) for Spaceship_Fire_List
+    spaceinvaders.o(i.Sprites_Life) refers to sprite.o(i.Sprite_List) for Sprite_List
+    spaceinvaders.o(i.Sprites_Life) refers to spaceship.o(i.Spaceship_Fire_Number) for Spaceship_Fire_Number
+    spaceinvaders.o(i.Sprites_Life) refers to sprite.o(i.Sprites_Number) for Sprites_Number
+    spaceinvaders.o(i.Sprites_Life) refers to sprite.o(i.Sprite_Is_Killed) for Sprite_Is_Killed
+    spaceinvaders.o(i.Sprites_Life) refers to spaceinvaders.o(i.Score_Update) for Score_Update
+    spaceinvaders.o(i.Sprites_Life) refers to graphics.o(i.Graphics_BigExplosion_Width) for Graphics_BigExplosion_Width
+    spaceinvaders.o(i.Sprites_Life) refers to graphics.o(i.Graphics_BigExplosion_Height) for Graphics_BigExplosion_Height
+    spaceinvaders.o(i.Sprites_Life) refers to graphics.o(i.Graphics_SmallExplosion0) for Graphics_SmallExplosion0
+    spaceinvaders.o(i.Sprites_Life) refers to nokia5110.o(i.Nokia5110_PrintBMP) for Nokia5110_PrintBMP
+    spaceinvaders.o(i.Sprites_Life) refers to nokia5110.o(i.Nokia5110_DisplayBuffer) for Nokia5110_DisplayBuffer
+    spaceinvaders.o(i.Sprites_Life) refers to sound.o(i.Sound_Killed) for Sound_Killed
+    spaceinvaders.o(i.Timer2A_Handler) refers to spaceinvaders.o(.data) for TimerCount
+    spaceinvaders.o(i.Timer2_Init) refers to spaceinvaders.o(.data) for TimerCount
+    spaceinvaders.o(i.main) refers to texas.o(i.TExaS_Init) for TExaS_Init
+    spaceinvaders.o(i.main) refers to nokia5110.o(i.Nokia5110_Init) for Nokia5110_Init
+    spaceinvaders.o(i.main) refers to nokia5110.o(i.Nokia5110_ClearBuffer) for Nokia5110_ClearBuffer
+    spaceinvaders.o(i.main) refers to nokia5110.o(i.Nokia5110_DisplayBuffer) for Nokia5110_DisplayBuffer
+    spaceinvaders.o(i.main) refers to spaceinvaders.o(i.Timer2_Init) for Timer2_Init
+    spaceinvaders.o(i.main) refers to sound.o(i.Sound_Init) for Sound_Init
+    spaceinvaders.o(i.main) refers to switch.o(i.Switch_Init) for Switch_Init
+    spaceinvaders.o(i.main) refers to led.o(i.LED_Init) for LED_Init
+    spaceinvaders.o(i.main) refers to spaceship.o(i.Spaceship_Init) for Spaceship_Init
+    spaceinvaders.o(i.main) refers to spaceship.o(i.Spaceship_Shield_Init) for Spaceship_Shield_Init
+    spaceinvaders.o(i.main) refers to sprite.o(i.Sprite_Init) for Sprite_Init
+    spaceinvaders.o(i.main) refers to spaceinvaders.o(i.ShieldGraphicsPtr_init) for ShieldGraphicsPtr_init
+    spaceinvaders.o(i.main) refers to random.o(.text) for Random_Init
+    spaceinvaders.o(i.main) refers to spaceinvaders.o(i.Game_Next_Level) for Game_Next_Level
+    spaceinvaders.o(i.main) refers to spaceinvaders.o(i.Game_Over) for Game_Over
+    spaceinvaders.o(i.main) refers to sprite.o(i.Sprite_Move) for Sprite_Move
+    spaceinvaders.o(i.main) refers to sprite.o(i.Sprite_Fire) for Sprite_Fire
+    spaceinvaders.o(i.main) refers to sprite.o(i.Sprite_Fire_MoveDown) for Sprite_Fire_MoveDown
+    spaceinvaders.o(i.main) refers to spaceship.o(i.Spaceship_Move) for Spaceship_Move
+    spaceinvaders.o(i.main) refers to spaceship.o(i.Spaceship_Shield) for Spaceship_Shield
+    spaceinvaders.o(i.main) refers to spaceinvaders.o(i.Player_Fire) for Player_Fire
+    spaceinvaders.o(i.main) refers to spaceinvaders.o(i.Player_Change_Weapon) for Player_Change_Weapon
+    spaceinvaders.o(i.main) refers to spaceship.o(i.Spaceship_Fire_MoveUp) for Spaceship_Fire_MoveUp
+    spaceinvaders.o(i.main) refers to spaceinvaders.o(i.Spcaeship_Shield_Status) for Spcaeship_Shield_Status
+    spaceinvaders.o(i.main) refers to spaceinvaders.o(i.Sprites_Life) for Sprites_Life
+    spaceinvaders.o(i.main) refers to spaceinvaders.o(i.Spcaeship_Alive) for Spcaeship_Alive
+    spaceinvaders.o(i.main) refers to spaceinvaders.o(i.Delay5ms) for Delay5ms
+    spaceinvaders.o(i.main) refers to spaceinvaders.o(.data) for Score
+    texas.o(i.SetCode) refers to texas.o(.bss) for TExaS
+    texas.o(i.SetCourse) refers to texas.o(.bss) for TExaS
+    texas.o(i.SetMode) refers to texas.o(.bss) for TExaS
+    texas.o(i.StartTimer4) refers to texas.o(.data) for ScopeCount
+    texas.o(i.TExaS_Init) refers to texas.o(i.PLL_Init) for PLL_Init
+    texas.o(i.TExaS_Init) refers to texas.o(i.SetCourse) for SetCourse
+    texas.o(i.TExaS_Init) refers to texas.o(i.UART0_Init) for UART0_Init
+    texas.o(i.TExaS_Init) refers to texas.o(i.SetCode) for SetCode
+    texas.o(i.TExaS_Init) refers to texas.o(i.ADC1_Init) for ADC1_Init
+    texas.o(i.TExaS_Init) refers to texas.o(.constdata) for IntroMsg
+    texas.o(i.TExaS_Init) refers to texas.o(.bss) for TExaS
+    texas.o(i.TExaS_Init) refers to texas.o(.data) for LastMode
+    texas.o(i.Timer5A_Handler) refers to texas.o(i.ADC1_In) for ADC1_In
+    texas.o(i.Timer5A_Handler) refers to texas.o(.data) for TExaS_Period
+    sound.o(i.Play) refers to dac.o(i.DAC_Out) for DAC_Out
+    sound.o(i.Play) refers to sound.o(.data) for Index
+    sound.o(i.Sound_Explosion) refers to sound.o(i.Sound_Play) for Sound_Play
+    sound.o(i.Sound_Explosion) refers to sound.o(.constdata) for explosion
+    sound.o(i.Sound_Fastinvader1) refers to sound.o(i.Sound_Play) for Sound_Play
+    sound.o(i.Sound_Fastinvader1) refers to sound.o(.constdata) for fastinvader1
+    sound.o(i.Sound_Fastinvader2) refers to sound.o(i.Sound_Play) for Sound_Play
+    sound.o(i.Sound_Fastinvader2) refers to sound.o(.constdata) for fastinvader2
+    sound.o(i.Sound_Fastinvader3) refers to sound.o(i.Sound_Play) for Sound_Play
+    sound.o(i.Sound_Fastinvader3) refers to sound.o(.constdata) for fastinvader3
+    sound.o(i.Sound_Fastinvader4) refers to sound.o(i.Sound_Play) for Sound_Play
+    sound.o(i.Sound_Fastinvader4) refers to sound.o(.constdata) for fastinvader4
+    sound.o(i.Sound_Highpitch) refers to sound.o(i.Sound_Play) for Sound_Play
+    sound.o(i.Sound_Highpitch) refers to sound.o(.constdata) for highpitch
+    sound.o(i.Sound_Init) refers to dac.o(i.DAC_Init) for DAC_Init
+    sound.o(i.Sound_Init) refers to sound.o(i.SysTick_Init) for SysTick_Init
+    sound.o(i.Sound_Init) refers to sound.o(.data) for Index
+    sound.o(i.Sound_Killed) refers to sound.o(i.Sound_Play) for Sound_Play
+    sound.o(i.Sound_Killed) refers to sound.o(.constdata) for invaderkilled
+    sound.o(i.Sound_Play) refers to sound.o(.data) for Wave
+    sound.o(i.Sound_Shoot) refers to sound.o(i.Sound_Play) for Sound_Play
+    sound.o(i.Sound_Shoot) refers to sound.o(.constdata) for shoot
+    sound.o(i.SysTick_Handler) refers to sound.o(i.Play) for Play
+    sound.o(i.SysTick_Handler) refers to led.o(i.LED1_Toggle) for LED1_Toggle
+    sprite.o(i.DifficultyLevel_1) refers to random.o(.text) for Random32
+    sprite.o(i.DifficultyLevel_1) refers to graphics.o(i.Graphics_Enemy30_Width) for Graphics_Enemy30_Width
+    sprite.o(i.DifficultyLevel_1) refers to graphics.o(i.Graphics_Enemy30_Height) for Graphics_Enemy30_Height
+    sprite.o(i.DifficultyLevel_1) refers to sprite.o(i.SpriteDraw) for SpriteDraw
+    sprite.o(i.DifficultyLevel_1) refers to sprite.o(.data) for direction
+    sprite.o(i.DifficultyLevel_1) refers to sprite.o(.bss) for SpriteList
+    sprite.o(i.DifficultyLevel_2) refers to random.o(.text) for Random32
+    sprite.o(i.DifficultyLevel_2) refers to graphics.o(i.Graphics_Enemy30_Width) for Graphics_Enemy30_Width
+    sprite.o(i.DifficultyLevel_2) refers to graphics.o(i.Graphics_Enemy30_Height) for Graphics_Enemy30_Height
+    sprite.o(i.DifficultyLevel_2) refers to sprite.o(i.SpriteDraw) for SpriteDraw
+    sprite.o(i.DifficultyLevel_2) refers to sprite.o(.data) for direction
+    sprite.o(i.DifficultyLevel_2) refers to sprite.o(.bss) for SpriteList
+    sprite.o(i.DifficultyLevel_3) refers to random.o(.text) for Random32
+    sprite.o(i.DifficultyLevel_3) refers to graphics.o(i.Graphics_Enemy30_Width) for Graphics_Enemy30_Width
+    sprite.o(i.DifficultyLevel_3) refers to graphics.o(i.Graphics_Enemy30_Height) for Graphics_Enemy30_Height
+    sprite.o(i.DifficultyLevel_3) refers to sprite.o(i.SpriteDraw) for SpriteDraw
+    sprite.o(i.DifficultyLevel_3) refers to sprite.o(.data) for direction
+    sprite.o(i.DifficultyLevel_3) refers to sprite.o(.bss) for SpriteList
+    sprite.o(i.MonsterMove) refers to sprite.o(i.SpriteDraw) for SpriteDraw
+    sprite.o(i.MonsterMove) refers to sprite.o(.data) for direction
+    sprite.o(i.MonsterMove) refers to sprite.o(.bss) for SpriteList
+    sprite.o(i.Play_Next_Level) refers to sprite.o(i.DifficultyLevel_1) for DifficultyLevel_1
+    sprite.o(i.Play_Next_Level) refers to sprite.o(i.DifficultyLevel_2) for DifficultyLevel_2
+    sprite.o(i.Play_Next_Level) refers to sprite.o(i.DifficultyLevel_3) for DifficultyLevel_3
+    sprite.o(i.Play_Next_Level) refers to sprite.o(i.TheMonster) for TheMonster
+    sprite.o(i.SpriteDraw) refers to nokia5110.o(i.Nokia5110_PrintBMP) for Nokia5110_PrintBMP
+    sprite.o(i.SpriteDraw) refers to nokia5110.o(i.Nokia5110_DisplayBuffer) for Nokia5110_DisplayBuffer
+    sprite.o(i.SpriteDraw) refers to sprite.o(.bss) for SpriteList
+    sprite.o(i.SpriteDraw) refers to sprite.o(.data) for NumberofSprites
+    sprite.o(i.SpriteMove) refers to sprite.o(i.SpriteDraw) for SpriteDraw
+    sprite.o(i.SpriteMove) refers to sprite.o(.data) for direction
+    sprite.o(i.SpriteMove) refers to sprite.o(.bss) for SpriteList
+    sprite.o(i.Sprite_Fire) refers to random.o(.text) for Random32
+    sprite.o(i.Sprite_Fire) refers to graphics.o(i.Graphics_Laser_Height) for Graphics_Laser_Height
+    sprite.o(i.Sprite_Fire) refers to graphics.o(i.Graphics_Laser0) for Graphics_Laser0
+    sprite.o(i.Sprite_Fire) refers to graphics.o(i.Graphics_Laser_Width) for Graphics_Laser_Width
+    sprite.o(i.Sprite_Fire) refers to sprite.o(.bss) for SpriteList
+    sprite.o(i.Sprite_Fire) refers to sprite.o(.data) for SpriteFireSpeed
+    sprite.o(i.Sprite_Fire_Clear) refers to sprite.o(.bss) for SpriteFireList
+    sprite.o(i.Sprite_Fire_List) refers to sprite.o(.bss) for SpriteFireList
+    sprite.o(i.Sprite_Fire_MoveDown) refers to nokia5110.o(i.Nokia5110_PrintBMP) for Nokia5110_PrintBMP
+    sprite.o(i.Sprite_Fire_MoveDown) refers to sprite.o(.bss) for SpriteFireList
+    sprite.o(i.Sprite_Fire_Speed) refers to sprite.o(.data) for SpriteFireSpeed
+    sprite.o(i.Sprite_Init) refers to graphics.o(i.Graphics_SmallEnemy30PointA) for Graphics_SmallEnemy30PointA
+    sprite.o(i.Sprite_Init) refers to sprite.o(.bss) for GraphicEnemyPtr
+    sprite.o(i.Sprite_Init) refers to graphics.o(i.Graphics_SmallEnemy10PointA) for Graphics_SmallEnemy10PointA
+    sprite.o(i.Sprite_Init) refers to graphics.o(i.Graphics_SmallEnemy20PointA) for Graphics_SmallEnemy20PointA
+    sprite.o(i.Sprite_Is_Killed) refers to sprite.o(.data) for NumberofSpritesAlive
+    sprite.o(i.Sprite_List) refers to sprite.o(.bss) for SpriteList
+    sprite.o(i.Sprite_Move) refers to sprite.o(i.MonsterMove) for MonsterMove
+    sprite.o(i.Sprite_Move) refers to sprite.o(i.SpriteMove) for SpriteMove
+    sprite.o(i.Sprite_Move) refers to sprite.o(.data) for NumberofSprites
+    sprite.o(i.Sprites_Alive_Count) refers to sprite.o(.data) for NumberofSpritesAlive
+    sprite.o(i.Sprites_Number) refers to sprite.o(.data) for NumberofSprites
+    sprite.o(i.TheMonster) refers to graphics.o(i.Graphics_Monster_Width) for Graphics_Monster_Width
+    sprite.o(i.TheMonster) refers to graphics.o(i.Graphics_Monster_Height) for Graphics_Monster_Height
+    sprite.o(i.TheMonster) refers to graphics.o(i.Graphics_Monster) for Graphics_Monster
+    sprite.o(i.TheMonster) refers to sprite.o(i.SpriteDraw) for SpriteDraw
+    sprite.o(i.TheMonster) refers to sprite.o(.data) for direction
+    sprite.o(i.TheMonster) refers to sprite.o(.bss) for SpriteList
+    graphics.o(i.Graphics_BigExplosion0) refers to graphics.o(.constdata) for BigExplosion0
+    graphics.o(i.Graphics_BigExplosion1) refers to graphics.o(.constdata) for BigExplosion1
+    graphics.o(i.Graphics_BigExplosion_Height) refers to graphics.o(.constdata) for BigExplosion0
+    graphics.o(i.Graphics_BigExplosion_Width) refers to graphics.o(.constdata) for BigExplosion0
+    graphics.o(i.Graphics_Bunker0) refers to graphics.o(.constdata) for Bunker0
+    graphics.o(i.Graphics_Bunker1) refers to graphics.o(.constdata) for Bunker1
+    graphics.o(i.Graphics_Bunker2) refers to graphics.o(.constdata) for Bunker2
+    graphics.o(i.Graphics_Bunker3) refers to graphics.o(.constdata) for Bunker3
+    graphics.o(i.Graphics_Bunker_Height) refers to graphics.o(.constdata) for Bunker0
+    graphics.o(i.Graphics_Bunker_Width) refers to graphics.o(.constdata) for Bunker0
+    graphics.o(i.Graphics_Enemy10_Height) refers to graphics.o(.constdata) for SmallEnemy10PointA
+    graphics.o(i.Graphics_Enemy10_Width) refers to graphics.o(.constdata) for SmallEnemy10PointA
+    graphics.o(i.Graphics_Enemy20_Height) refers to graphics.o(.constdata) for SmallEnemy20PointA
+    graphics.o(i.Graphics_Enemy20_Width) refers to graphics.o(.constdata) for SmallEnemy20PointA
+    graphics.o(i.Graphics_Enemy30_Height) refers to graphics.o(.constdata) for SmallEnemy30PointA
+    graphics.o(i.Graphics_Enemy30_Width) refers to graphics.o(.constdata) for SmallEnemy30PointA
+    graphics.o(i.Graphics_EnemyBonus_Height) refers to graphics.o(.constdata) for SmallEnemyBonus0
+    graphics.o(i.Graphics_EnemyBonus_Width) refers to graphics.o(.constdata) for SmallEnemyBonus0
+    graphics.o(i.Graphics_Laser0) refers to graphics.o(.constdata) for Laser0
+    graphics.o(i.Graphics_Laser1) refers to graphics.o(.constdata) for Laser1
+    graphics.o(i.Graphics_Laser_Height) refers to graphics.o(.constdata) for Laser0
+    graphics.o(i.Graphics_Laser_Width) refers to graphics.o(.constdata) for Laser0
+    graphics.o(i.Graphics_Missile0) refers to graphics.o(.constdata) for Missile0
+    graphics.o(i.Graphics_Missile1) refers to graphics.o(.constdata) for Missile1
+    graphics.o(i.Graphics_Missile2) refers to graphics.o(.constdata) for Missile2
+    graphics.o(i.Graphics_Missle_Height) refers to graphics.o(.constdata) for Missile0
+    graphics.o(i.Graphics_Missle_Width) refers to graphics.o(.constdata) for Missile0
+    graphics.o(i.Graphics_Monster) refers to graphics.o(.constdata) for Monster
+    graphics.o(i.Graphics_Monster_Height) refers to graphics.o(.constdata) for Monster
+    graphics.o(i.Graphics_Monster_Width) refers to graphics.o(.constdata) for Monster
+    graphics.o(i.Graphics_PlayerShip0) refers to graphics.o(.constdata) for PlayerShip0
+    graphics.o(i.Graphics_Player_Height) refers to graphics.o(.constdata) for PlayerShip0
+    graphics.o(i.Graphics_Player_Width) refers to graphics.o(.constdata) for PlayerShip0
+    graphics.o(i.Graphics_SmallEnemy10PointA) refers to graphics.o(.constdata) for SmallEnemy10PointA
+    graphics.o(i.Graphics_SmallEnemy10PointB) refers to graphics.o(.constdata) for SmallEnemy10PointB
+    graphics.o(i.Graphics_SmallEnemy20PointA) refers to graphics.o(.constdata) for SmallEnemy20PointA
+    graphics.o(i.Graphics_SmallEnemy20PointB) refers to graphics.o(.constdata) for SmallEnemy20PointB
+    graphics.o(i.Graphics_SmallEnemy30PointA) refers to graphics.o(.constdata) for SmallEnemy30PointA
+    graphics.o(i.Graphics_SmallEnemy30PointB) refers to graphics.o(.constdata) for SmallEnemy30PointB
+    graphics.o(i.Graphics_SmallEnemyBonus0) refers to graphics.o(.constdata) for SmallEnemyBonus0
+    graphics.o(i.Graphics_SmallExplosion0) refers to graphics.o(.constdata) for SmallExplosion0
+    graphics.o(i.Graphics_SmallExplosion1) refers to graphics.o(.constdata) for SmallExplosion1
+    graphics.o(i.Graphics_SmallExplosion_Height) refers to graphics.o(.constdata) for SmallExplosion0
+    graphics.o(i.Graphics_SmallExplosion_Width) refers to graphics.o(.constdata) for SmallExplosion0
+    spaceship.o(i.SpaceshipDraw) refers to nokia5110.o(i.Nokia5110_PrintBMP) for Nokia5110_PrintBMP
+    spaceship.o(i.SpaceshipDraw) refers to spaceship.o(.bss) for PlayerSpaceship
+    spaceship.o(i.SpaceshipShieldDraw) refers to nokia5110.o(i.Nokia5110_PrintBMP) for Nokia5110_PrintBMP
+    spaceship.o(i.SpaceshipShieldDraw) refers to spaceship.o(.bss) for PlayerSpaceshipShield
+    spaceship.o(i.Spaceship_Data) refers to spaceship.o(.bss) for PlayerSpaceship
+    spaceship.o(i.Spaceship_Fire) refers to spaceship.o(i.Spaceship_Position) for Spaceship_Position
+    spaceship.o(i.Spaceship_Fire) refers to graphics.o(i.Graphics_Player_Width) for Graphics_Player_Width
+    spaceship.o(i.Spaceship_Fire) refers to graphics.o(i.Graphics_Missile0) for Graphics_Missile0
+    spaceship.o(i.Spaceship_Fire) refers to graphics.o(i.Graphics_Missle_Width) for Graphics_Missle_Width
+    spaceship.o(i.Spaceship_Fire) refers to graphics.o(i.Graphics_Missle_Height) for Graphics_Missle_Height
+    spaceship.o(i.Spaceship_Fire) refers to spaceship.o(.data) for FirePosition
+    spaceship.o(i.Spaceship_Fire) refers to spaceship.o(.bss) for SpaceshipFireList
+    spaceship.o(i.Spaceship_Fire_Clear) refers to nokia5110.o(i.Nokia5110_PrintBMP) for Nokia5110_PrintBMP
+    spaceship.o(i.Spaceship_Fire_Clear) refers to spaceship.o(.bss) for SpaceshipFireList
+    spaceship.o(i.Spaceship_Fire_List) refers to spaceship.o(.bss) for SpaceshipFireList
+    spaceship.o(i.Spaceship_Fire_MoveUp) refers to nokia5110.o(i.Nokia5110_PrintBMP) for Nokia5110_PrintBMP
+    spaceship.o(i.Spaceship_Fire_MoveUp) refers to spaceship.o(.bss) for SpaceshipFireList
+    spaceship.o(i.Spaceship_Init) refers to adc.o(i.ADC0_Init) for ADC0_Init
+    spaceship.o(i.Spaceship_Init) refers to graphics.o(i.Graphics_PlayerShip0) for Graphics_PlayerShip0
+    spaceship.o(i.Spaceship_Init) refers to graphics.o(i.Graphics_Player_Width) for Graphics_Player_Width
+    spaceship.o(i.Spaceship_Init) refers to graphics.o(i.Graphics_Player_Height) for Graphics_Player_Height
+    spaceship.o(i.Spaceship_Init) refers to spaceship.o(i.SpaceshipDraw) for SpaceshipDraw
+    spaceship.o(i.Spaceship_Init) refers to spaceship.o(.bss) for PlayerSpaceship
+    spaceship.o(i.Spaceship_Move) refers to spaceship.o(i.Spaceship_Position) for Spaceship_Position
+    spaceship.o(i.Spaceship_Move) refers to spaceship.o(i.SpaceshipDraw) for SpaceshipDraw
+    spaceship.o(i.Spaceship_Move) refers to spaceship.o(.bss) for PlayerSpaceship
+    spaceship.o(i.Spaceship_Position) refers to adc.o(i.ADC0_In) for ADC0_In
+    spaceship.o(i.Spaceship_Position) refers to spaceship.o(i.Convert) for Convert
+    spaceship.o(i.Spaceship_Position) refers to spaceship.o(.data) for ADCdata
+    spaceship.o(i.Spaceship_Shield) refers to spaceship.o(i.SpaceshipShieldDraw) for SpaceshipShieldDraw
+    spaceship.o(i.Spaceship_Shield_Data) refers to spaceship.o(.bss) for PlayerSpaceshipShield
+    spaceship.o(i.Spaceship_Shield_Init) refers to graphics.o(i.Graphics_Player_Height) for Graphics_Player_Height
+    spaceship.o(i.Spaceship_Shield_Init) refers to graphics.o(i.Graphics_Bunker0) for Graphics_Bunker0
+    spaceship.o(i.Spaceship_Shield_Init) refers to graphics.o(i.Graphics_Bunker_Width) for Graphics_Bunker_Width
+    spaceship.o(i.Spaceship_Shield_Init) refers to graphics.o(i.Graphics_Bunker_Height) for Graphics_Bunker_Height
+    spaceship.o(i.Spaceship_Shield_Init) refers to spaceship.o(i.SpaceshipShieldDraw) for SpaceshipShieldDraw
+    spaceship.o(i.Spaceship_Shield_Init) refers to spaceship.o(.bss) for PlayerSpaceshipShield
+    __main.o(!!!main) refers to rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
+    rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
+    rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
+    rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to rtentry2.o(.ARM.Collect$$rtentry$$0000000C) for __rt_entry_postli_1
+    rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to rtentry2.o(.ARM.Collect$$rtentry$$00000009) for __rt_entry_postsh_1
+    rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to rtentry2.o(.ARM.Collect$$rtentry$$00000002) for __rt_entry_presh_1
+    rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to rtentry4.o(.ARM.Collect$$rtentry$$00000004) for __rt_entry_sh
+    rtentry2.o(.ARM.Collect$$rtentry$$00000008) refers to boardinit2.o(.text) for _platform_post_stackheap_init
+    rtentry2.o(.ARM.Collect$$rtentry$$0000000A) refers to libinit.o(.ARM.Collect$$libinit$$00000000) for __rt_lib_init
+    rtentry2.o(.ARM.Collect$$rtentry$$0000000B) refers to boardinit3.o(.text) for _platform_post_lib_init
+    rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to spaceinvaders.o(i.main) for main
+    rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to exit.o(.text) for exit
+    rtentry2.o(.ARM.exidx) refers to rtentry2.o(.ARM.Collect$$rtentry$$00000001) for .ARM.Collect$$rtentry$$00000001
+    rtentry2.o(.ARM.exidx) refers to rtentry2.o(.ARM.Collect$$rtentry$$00000008) for .ARM.Collect$$rtentry$$00000008
+    rtentry2.o(.ARM.exidx) refers to rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for .ARM.Collect$$rtentry$$0000000A
+    rtentry2.o(.ARM.exidx) refers to rtentry2.o(.ARM.Collect$$rtentry$$0000000B) for .ARM.Collect$$rtentry$$0000000B
+    rtentry2.o(.ARM.exidx) refers to rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for .ARM.Collect$$rtentry$$0000000D
+    rtentry4.o(.ARM.Collect$$rtentry$$00000004) refers to sys_stackheap_outer.o(.text) for __user_setup_stackheap
+    rtentry4.o(.ARM.exidx) refers to rtentry4.o(.ARM.Collect$$rtentry$$00000004) for .ARM.Collect$$rtentry$$00000004
+    sys_stackheap_outer.o(.text) refers to libspace.o(.text) for __user_perproc_libspace
+    sys_stackheap_outer.o(.text) refers to startup.o(.text) for __user_initial_stackheap
+    exit.o(.text) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for __rt_exit
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002C) for __rt_lib_init_alloca_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002A) for __rt_lib_init_argv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000019) for __rt_lib_init_atexit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001F) for __rt_lib_init_clock_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000030) for __rt_lib_init_cpp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002E) for __rt_lib_init_exceptions_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000002) for __rt_lib_init_fp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001D) for __rt_lib_init_fp_trap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000021) for __rt_lib_init_getenv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000008) for __rt_lib_init_heap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000F) for __rt_lib_init_lc_collate_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000011) for __rt_lib_init_lc_ctype_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000013) for __rt_lib_init_lc_monetary_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000015) for __rt_lib_init_lc_numeric_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000017) for __rt_lib_init_lc_time_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000C) for __rt_lib_init_rand_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000031) for __rt_lib_init_return
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001B) for __rt_lib_init_signal_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000023) for __rt_lib_init_stdio_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000A) for __rt_lib_init_user_alloc_1
+    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for .ARM.Collect$$rtexit$$00000000
+    libinit2.o(.ARM.Collect$$libinit$$0000000E) refers to libinit2.o(.ARM.Collect$$libinit$$0000000D) for .ARM.Collect$$libinit$$0000000D
+    libinit2.o(.ARM.Collect$$libinit$$00000010) refers to libinit2.o(.ARM.Collect$$libinit$$0000000D) for .ARM.Collect$$libinit$$0000000D
+    libinit2.o(.ARM.Collect$$libinit$$00000012) refers to libinit2.o(.ARM.Collect$$libinit$$0000000D) for .ARM.Collect$$libinit$$0000000D
+    libinit2.o(.ARM.Collect$$libinit$$00000014) refers to libinit2.o(.ARM.Collect$$libinit$$0000000D) for .ARM.Collect$$libinit$$0000000D
+    libinit2.o(.ARM.Collect$$libinit$$00000016) refers to libinit2.o(.ARM.Collect$$libinit$$0000000D) for .ARM.Collect$$libinit$$0000000D
+    libinit2.o(.ARM.Collect$$libinit$$00000024) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    libinit2.o(.ARM.Collect$$libinit$$00000025) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    rtexit2.o(.ARM.Collect$$rtexit$$00000003) refers to libshutdown.o(.ARM.Collect$$libshutdown$$00000000) for __rt_lib_shutdown
+    rtexit2.o(.ARM.Collect$$rtexit$$00000004) refers to sys_exit.o(.text) for _sys_exit
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000001) for .ARM.Collect$$rtexit$$00000001
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for .ARM.Collect$$rtexit$$00000003
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for .ARM.Collect$$rtexit$$00000004
+    argv_veneer.o(.emb_text) refers to no_argv.o(.text) for __ARM_get_argv
+    sys_exit.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_exit.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    _get_argv_nomalloc.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv_nomalloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv_nomalloc.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000006) for __rt_lib_shutdown_fp_trap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E) for __rt_lib_shutdown_heap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F) for __rt_lib_shutdown_return
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000009) for __rt_lib_shutdown_signal_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000003) for __rt_lib_shutdown_stdio_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000B) for __rt_lib_shutdown_user_alloc_1
+    sys_command.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig_rtmem_outer.o(.text) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_rtmem_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_rtmem_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    rt_raise.o(.text) refers to __raise.o(.text) for __raise
+    rt_raise.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_exit.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_rtmem_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    __raise.o(.text) refers to defsig.o(CL$$defsig) for __default_signal_handler
+    defsig_general.o(.text) refers to sys_wrch.o(.text) for _ttywrch
+    sys_wrch.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_wrch.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig.o(CL$$defsig) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_abrt_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_fpe_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtred_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_stak_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_pvfn_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_cppl_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_segv_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_other.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing spaceinvaders.o(i.Delay100ms), (36 bytes).
+    Removing spaceinvaders.o(.constdata), (480 bytes).
+    Removing texas.o(i.SetMode), (24 bytes).
+    Removing texas.o(i.StartTimer4), (36 bytes).
+    Removing texas.o(i.StopTimer4), (24 bytes).
+    Removing texas.o(i.TExaS_Stop), (28 bytes).
+    Removing texas.o(i.UART0_InChar), (24 bytes).
+    Removing texas.o(i.UART0_InCharNonBlocking), (28 bytes).
+    Removing texas.o(i.UART0_OutChar), (24 bytes).
+    Removing texas.o(i.UART0_OutCharNonBlock), (12 bytes).
+    Removing texas.o(i.copy), (18 bytes).
+    Removing sound.o(i.Sound_Fastinvader1), (20 bytes).
+    Removing sound.o(i.Sound_Fastinvader2), (20 bytes).
+    Removing sound.o(i.Sound_Fastinvader3), (20 bytes).
+    Removing sound.o(i.Sound_Fastinvader4), (20 bytes).
+    Removing sprite.o(i.Sprite_Fire_Speed), (12 bytes).
+    Removing sprite.o(.constdata), (480 bytes).
+    Removing graphics.o(i.Graphics_BigExplosion1), (8 bytes).
+    Removing graphics.o(i.Graphics_Enemy10_Height), (12 bytes).
+    Removing graphics.o(i.Graphics_Enemy10_Width), (12 bytes).
+    Removing graphics.o(i.Graphics_Enemy20_Height), (12 bytes).
+    Removing graphics.o(i.Graphics_Enemy20_Width), (12 bytes).
+    Removing graphics.o(i.Graphics_EnemyBonus_Height), (12 bytes).
+    Removing graphics.o(i.Graphics_EnemyBonus_Width), (12 bytes).
+    Removing graphics.o(i.Graphics_Laser1), (8 bytes).
+    Removing graphics.o(i.Graphics_Missile1), (8 bytes).
+    Removing graphics.o(i.Graphics_Missile2), (8 bytes).
+    Removing graphics.o(i.Graphics_SmallEnemy10PointB), (8 bytes).
+    Removing graphics.o(i.Graphics_SmallEnemy20PointB), (8 bytes).
+    Removing graphics.o(i.Graphics_SmallEnemy30PointB), (8 bytes).
+    Removing graphics.o(i.Graphics_SmallEnemyBonus0), (8 bytes).
+    Removing graphics.o(i.Graphics_SmallExplosion1), (8 bytes).
+    Removing graphics.o(.bss), (200 bytes).
+    Removing spaceship.o(.constdata), (480 bytes).
+    Removing led.o(i.LED1_Off), (24 bytes).
+    Removing led.o(i.LED1_On), (24 bytes).
+    Removing led.o(i.LED2_Off), (24 bytes).
+    Removing led.o(i.LED2_On), (24 bytes).
+    Removing led.o(i.LED2_Toggle), (24 bytes).
+
+39 unused section(s) (total 2250 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      644  startup.o(RESET)
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_copy.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtentry.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtentry2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtentry4.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
+    ../clib/angel/scatter.s                  0x00000000   Number         0  __scatter.o ABSOLUTE
+    ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
+    ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
+    ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
+    ../fplib/fpinit.s                        0x00000000   Number         0  fpinit.o ABSOLUTE
+    ADC.c                                    0x00000000   Number         0  adc.o ABSOLUTE
+    DAC.c                                    0x00000000   Number         0  dac.o ABSOLUTE
+    Graphics.c                               0x00000000   Number         0  graphics.o ABSOLUTE
+    LED.c                                    0x00000000   Number         0  led.o ABSOLUTE
+    Nokia5110.c                              0x00000000   Number         0  nokia5110.o ABSOLUTE
+    Sound.c                                  0x00000000   Number         0  sound.o ABSOLUTE
+    SpaceInvaders.c                          0x00000000   Number         0  spaceinvaders.o ABSOLUTE
+    SpaceShip.c                              0x00000000   Number         0  spaceship.o ABSOLUTE
+    Sprite.c                                 0x00000000   Number         0  sprite.o ABSOLUTE
+    Switch.c                                 0x00000000   Number         0  switch.o ABSOLUTE
+    TExaS.c                                  0x00000000   Number         0  texas.o ABSOLUTE
+    Timer2.c                                 0x00000000   Number         0  timer2.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    random.s                                 0x00000000   Number         0  random.o ABSOLUTE
+    startup.s                                0x00000000   Number         0  startup.o ABSOLUTE
+    !!!main                                  0x00000284   Section        8  __main.o(!!!main)
+    !!!scatter                               0x0000028c   Section       52  __scatter.o(!!!scatter)
+    !!handler_copy                           0x000002c0   Section       26  __scatter_copy.o(!!handler_copy)
+    !!handler_zi                             0x000002dc   Section       28  __scatter_zi.o(!!handler_zi)
+    .ARM.Collect$$libinit$$00000000          0x000002f8   Section        2  libinit.o(.ARM.Collect$$libinit$$00000000)
+    .ARM.Collect$$libinit$$00000002          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000002)
+    .ARM.Collect$$libinit$$00000008          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000008)
+    .ARM.Collect$$libinit$$0000000A          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000A)
+    .ARM.Collect$$libinit$$0000000C          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    .ARM.Collect$$libinit$$0000000F          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000F)
+    .ARM.Collect$$libinit$$00000011          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    .ARM.Collect$$libinit$$00000013          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    .ARM.Collect$$libinit$$00000015          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    .ARM.Collect$$libinit$$00000017          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    .ARM.Collect$$libinit$$00000019          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    .ARM.Collect$$libinit$$0000001B          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    .ARM.Collect$$libinit$$0000001D          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    .ARM.Collect$$libinit$$0000001F          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    .ARM.Collect$$libinit$$00000021          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    .ARM.Collect$$libinit$$00000023          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    .ARM.Collect$$libinit$$0000002A          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002A)
+    .ARM.Collect$$libinit$$0000002C          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002C)
+    .ARM.Collect$$libinit$$0000002E          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    .ARM.Collect$$libinit$$00000030          0x000002fa   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    .ARM.Collect$$libinit$$00000031          0x000002fa   Section        2  libinit2.o(.ARM.Collect$$libinit$$00000031)
+    .ARM.Collect$$libshutdown$$00000000      0x000002fc   Section        2  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    .ARM.Collect$$libshutdown$$00000003      0x000002fe   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000003)
+    .ARM.Collect$$libshutdown$$00000006      0x000002fe   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000006)
+    .ARM.Collect$$libshutdown$$00000009      0x000002fe   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000009)
+    .ARM.Collect$$libshutdown$$0000000B      0x000002fe   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000B)
+    .ARM.Collect$$libshutdown$$0000000E      0x000002fe   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E)
+    .ARM.Collect$$libshutdown$$0000000F      0x000002fe   Section        2  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F)
+    .ARM.Collect$$rtentry$$00000000          0x00000300   Section        0  rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    .ARM.Collect$$rtentry$$00000002          0x00000300   Section        0  rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    .ARM.Collect$$rtentry$$00000004          0x00000300   Section        6  rtentry4.o(.ARM.Collect$$rtentry$$00000004)
+    .ARM.Collect$$rtentry$$00000009          0x00000306   Section        0  rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    .ARM.Collect$$rtentry$$0000000A          0x00000306   Section        4  rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    .ARM.Collect$$rtentry$$0000000C          0x0000030a   Section        0  rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    .ARM.Collect$$rtentry$$0000000D          0x0000030a   Section        8  rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    .ARM.Collect$$rtexit$$00000000           0x00000312   Section        2  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    .ARM.Collect$$rtexit$$00000002           0x00000314   Section        0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    .ARM.Collect$$rtexit$$00000003           0x00000314   Section        4  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    .ARM.Collect$$rtexit$$00000004           0x00000318   Section        6  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    .text                                    0x00000320   Section       48  startup.o(.text)
+    .text                                    0x00000350   Section       64  random.o(.text)
+    .text                                    0x00000390   Section        0  heapauxi.o(.text)
+    .text                                    0x00000396   Section       74  sys_stackheap_outer.o(.text)
+    .text                                    0x000003e0   Section        0  exit.o(.text)
+    .text                                    0x000003ec   Section        8  libspace.o(.text)
+    .text                                    0x000003f4   Section        0  sys_exit.o(.text)
+    .text                                    0x00000400   Section        2  use_no_semi.o(.text)
+    .text                                    0x00000402   Section        0  indicate_semi.o(.text)
+    i.ADC0_In                                0x00000404   Section        0  adc.o(i.ADC0_In)
+    i.ADC0_Init                              0x00000430   Section        0  adc.o(i.ADC0_Init)
+    i.ADC1_In                                0x00000500   Section        0  texas.o(i.ADC1_In)
+    i.ADC1_Init                              0x0000050c   Section        0  texas.o(i.ADC1_Init)
+    i.Convert                                0x000005e0   Section        0  spaceship.o(i.Convert)
+    Convert                                  0x000005e1   Thumb Code    12  spaceship.o(i.Convert)
+    i.DAC_Init                               0x000005ec   Section        0  dac.o(i.DAC_Init)
+    i.DAC_Out                                0x0000066c   Section        0  dac.o(i.DAC_Out)
+    i.Delay5ms                               0x00000678   Section        0  spaceinvaders.o(i.Delay5ms)
+    i.DifficultyLevel_1                      0x00000698   Section        0  sprite.o(i.DifficultyLevel_1)
+    DifficultyLevel_1                        0x00000699   Thumb Code   168  sprite.o(i.DifficultyLevel_1)
+    i.DifficultyLevel_2                      0x00000758   Section        0  sprite.o(i.DifficultyLevel_2)
+    DifficultyLevel_2                        0x00000759   Thumb Code   318  sprite.o(i.DifficultyLevel_2)
+    i.DifficultyLevel_3                      0x000008b0   Section        0  sprite.o(i.DifficultyLevel_3)
+    DifficultyLevel_3                        0x000008b1   Thumb Code   326  sprite.o(i.DifficultyLevel_3)
+    i.Game_Next_Level                        0x00000a10   Section        0  spaceinvaders.o(i.Game_Next_Level)
+    i.Game_Over                              0x00000ac4   Section        0  spaceinvaders.o(i.Game_Over)
+    i.Graphics_BigExplosion0                 0x00000b48   Section        0  graphics.o(i.Graphics_BigExplosion0)
+    i.Graphics_BigExplosion_Height           0x00000b50   Section        0  graphics.o(i.Graphics_BigExplosion_Height)
+    i.Graphics_BigExplosion_Width            0x00000b5c   Section        0  graphics.o(i.Graphics_BigExplosion_Width)
+    i.Graphics_Bunker0                       0x00000b68   Section        0  graphics.o(i.Graphics_Bunker0)
+    i.Graphics_Bunker1                       0x00000b70   Section        0  graphics.o(i.Graphics_Bunker1)
+    i.Graphics_Bunker2                       0x00000b78   Section        0  graphics.o(i.Graphics_Bunker2)
+    i.Graphics_Bunker3                       0x00000b80   Section        0  graphics.o(i.Graphics_Bunker3)
+    i.Graphics_Bunker_Height                 0x00000b88   Section        0  graphics.o(i.Graphics_Bunker_Height)
+    i.Graphics_Bunker_Width                  0x00000b94   Section        0  graphics.o(i.Graphics_Bunker_Width)
+    i.Graphics_Enemy30_Height                0x00000ba0   Section        0  graphics.o(i.Graphics_Enemy30_Height)
+    i.Graphics_Enemy30_Width                 0x00000bac   Section        0  graphics.o(i.Graphics_Enemy30_Width)
+    i.Graphics_Laser0                        0x00000bb8   Section        0  graphics.o(i.Graphics_Laser0)
+    i.Graphics_Laser_Height                  0x00000bc0   Section        0  graphics.o(i.Graphics_Laser_Height)
+    i.Graphics_Laser_Width                   0x00000bcc   Section        0  graphics.o(i.Graphics_Laser_Width)
+    i.Graphics_Missile0                      0x00000bd8   Section        0  graphics.o(i.Graphics_Missile0)
+    i.Graphics_Missle_Height                 0x00000be0   Section        0  graphics.o(i.Graphics_Missle_Height)
+    i.Graphics_Missle_Width                  0x00000bec   Section        0  graphics.o(i.Graphics_Missle_Width)
+    i.Graphics_Monster                       0x00000bf8   Section        0  graphics.o(i.Graphics_Monster)
+    i.Graphics_Monster_Height                0x00000c00   Section        0  graphics.o(i.Graphics_Monster_Height)
+    i.Graphics_Monster_Width                 0x00000c0c   Section        0  graphics.o(i.Graphics_Monster_Width)
+    i.Graphics_PlayerShip0                   0x00000c18   Section        0  graphics.o(i.Graphics_PlayerShip0)
+    i.Graphics_Player_Height                 0x00000c20   Section        0  graphics.o(i.Graphics_Player_Height)
+    i.Graphics_Player_Width                  0x00000c2c   Section        0  graphics.o(i.Graphics_Player_Width)
+    i.Graphics_SmallEnemy10PointA            0x00000c38   Section        0  graphics.o(i.Graphics_SmallEnemy10PointA)
+    i.Graphics_SmallEnemy20PointA            0x00000c40   Section        0  graphics.o(i.Graphics_SmallEnemy20PointA)
+    i.Graphics_SmallEnemy30PointA            0x00000c48   Section        0  graphics.o(i.Graphics_SmallEnemy30PointA)
+    i.Graphics_SmallExplosion0               0x00000c50   Section        0  graphics.o(i.Graphics_SmallExplosion0)
+    i.Graphics_SmallExplosion_Height         0x00000c58   Section        0  graphics.o(i.Graphics_SmallExplosion_Height)
+    i.Graphics_SmallExplosion_Width          0x00000c64   Section        0  graphics.o(i.Graphics_SmallExplosion_Width)
+    i.LED1_Toggle                            0x00000c70   Section        0  led.o(i.LED1_Toggle)
+    i.LED_Init                               0x00000c88   Section        0  led.o(i.LED_Init)
+    i.MonsterMove                            0x00000d08   Section        0  sprite.o(i.MonsterMove)
+    MonsterMove                              0x00000d09   Thumb Code   166  sprite.o(i.MonsterMove)
+    i.Nokia5110_Clear                        0x00000dbc   Section        0  nokia5110.o(i.Nokia5110_Clear)
+    i.Nokia5110_ClearBuffer                  0x00000ddc   Section        0  nokia5110.o(i.Nokia5110_ClearBuffer)
+    i.Nokia5110_DisplayBuffer                0x00000df4   Section        0  nokia5110.o(i.Nokia5110_DisplayBuffer)
+    i.Nokia5110_DrawFullImage                0x00000e04   Section        0  nokia5110.o(i.Nokia5110_DrawFullImage)
+    i.Nokia5110_Init                         0x00000e28   Section        0  nokia5110.o(i.Nokia5110_Init)
+    i.Nokia5110_OutChar                      0x00000f94   Section        0  nokia5110.o(i.Nokia5110_OutChar)
+    i.Nokia5110_OutString                    0x00000fcc   Section        0  nokia5110.o(i.Nokia5110_OutString)
+    i.Nokia5110_OutUDec                      0x00000fe2   Section        0  nokia5110.o(i.Nokia5110_OutUDec)
+    i.Nokia5110_PrintBMP                     0x00001154   Section        0  nokia5110.o(i.Nokia5110_PrintBMP)
+    i.Nokia5110_SetCursor                    0x000012fc   Section        0  nokia5110.o(i.Nokia5110_SetCursor)
+    i.PLL_Init                               0x0000132c   Section        0  texas.o(i.PLL_Init)
+    i.Play                                   0x000013a8   Section        0  sound.o(i.Play)
+    i.Play_Next_Level                        0x000013e0   Section        0  sprite.o(i.Play_Next_Level)
+    i.Player_Change_Weapon                   0x00001414   Section        0  spaceinvaders.o(i.Player_Change_Weapon)
+    i.Player_Fire                            0x0000144c   Section        0  spaceinvaders.o(i.Player_Fire)
+    i.SW1_Pressed                            0x0000147c   Section        0  switch.o(i.SW1_Pressed)
+    i.SW2_Pressed                            0x00001494   Section        0  switch.o(i.SW2_Pressed)
+    i.Score_Update                           0x000014ac   Section        0  spaceinvaders.o(i.Score_Update)
+    i.SetCode                                0x000014bc   Section        0  texas.o(i.SetCode)
+    i.SetCourse                              0x000014d4   Section        0  texas.o(i.SetCourse)
+    i.ShieldGraphicsPtr_init                 0x000014ec   Section        0  spaceinvaders.o(i.ShieldGraphicsPtr_init)
+    i.Sound_Explosion                        0x00001514   Section        0  sound.o(i.Sound_Explosion)
+    i.Sound_Highpitch                        0x00001528   Section        0  sound.o(i.Sound_Highpitch)
+    i.Sound_Init                             0x0000153c   Section        0  sound.o(i.Sound_Init)
+    i.Sound_Killed                           0x00001560   Section        0  sound.o(i.Sound_Killed)
+    i.Sound_Play                             0x00001574   Section        0  sound.o(i.Sound_Play)
+    i.Sound_Shoot                            0x00001590   Section        0  sound.o(i.Sound_Shoot)
+    i.SpaceshipDraw                          0x000015a4   Section        0  spaceship.o(i.SpaceshipDraw)
+    SpaceshipDraw                            0x000015a5   Thumb Code    24  spaceship.o(i.SpaceshipDraw)
+    i.SpaceshipShieldDraw                    0x000015c0   Section        0  spaceship.o(i.SpaceshipShieldDraw)
+    SpaceshipShieldDraw                      0x000015c1   Thumb Code    24  spaceship.o(i.SpaceshipShieldDraw)
+    i.Spaceship_Change_Weapon                0x000015dc   Section        0  spaceship.o(i.Spaceship_Change_Weapon)
+    i.Spaceship_Data                         0x000015e0   Section        0  spaceship.o(i.Spaceship_Data)
+    i.Spaceship_Fire                         0x000015e8   Section        0  spaceship.o(i.Spaceship_Fire)
+    i.Spaceship_Fire_Clear                   0x00001664   Section        0  spaceship.o(i.Spaceship_Fire_Clear)
+    i.Spaceship_Fire_List                    0x000016b4   Section        0  spaceship.o(i.Spaceship_Fire_List)
+    i.Spaceship_Fire_MoveUp                  0x000016bc   Section        0  spaceship.o(i.Spaceship_Fire_MoveUp)
+    i.Spaceship_Fire_Number                  0x0000174c   Section        0  spaceship.o(i.Spaceship_Fire_Number)
+    i.Spaceship_Init                         0x00001750   Section        0  spaceship.o(i.Spaceship_Init)
+    i.Spaceship_Move                         0x0000178c   Section        0  spaceship.o(i.Spaceship_Move)
+    i.Spaceship_Position                     0x000017a0   Section        0  spaceship.o(i.Spaceship_Position)
+    i.Spaceship_Shield                       0x000017c4   Section        0  spaceship.o(i.Spaceship_Shield)
+    i.Spaceship_Shield_Data                  0x000017cc   Section        0  spaceship.o(i.Spaceship_Shield_Data)
+    i.Spaceship_Shield_Init                  0x000017d4   Section        0  spaceship.o(i.Spaceship_Shield_Init)
+    i.Spcaeship_Alive                        0x00001814   Section        0  spaceinvaders.o(i.Spcaeship_Alive)
+    i.Spcaeship_Shield_Status                0x000018cc   Section        0  spaceinvaders.o(i.Spcaeship_Shield_Status)
+    i.SpriteDraw                             0x0000199c   Section        0  sprite.o(i.SpriteDraw)
+    SpriteDraw                               0x0000199d   Thumb Code    70  sprite.o(i.SpriteDraw)
+    i.SpriteMove                             0x000019ec   Section        0  sprite.o(i.SpriteMove)
+    SpriteMove                               0x000019ed   Thumb Code   168  sprite.o(i.SpriteMove)
+    i.Sprite_Fire                            0x00001aa0   Section        0  sprite.o(i.Sprite_Fire)
+    i.Sprite_Fire_Clear                      0x00001b70   Section        0  sprite.o(i.Sprite_Fire_Clear)
+    i.Sprite_Fire_List                       0x00001b8c   Section        0  sprite.o(i.Sprite_Fire_List)
+    i.Sprite_Fire_MoveDown                   0x00001b94   Section        0  sprite.o(i.Sprite_Fire_MoveDown)
+    i.Sprite_Init                            0x00001c1c   Section        0  sprite.o(i.Sprite_Init)
+    i.Sprite_Is_Killed                       0x00001c3c   Section        0  sprite.o(i.Sprite_Is_Killed)
+    i.Sprite_List                            0x00001c4c   Section        0  sprite.o(i.Sprite_List)
+    i.Sprite_Move                            0x00001c54   Section        0  sprite.o(i.Sprite_Move)
+    i.Sprites_Alive_Count                    0x00001c70   Section        0  sprite.o(i.Sprites_Alive_Count)
+    i.Sprites_Fire_Number                    0x00001c7c   Section        0  sprite.o(i.Sprites_Fire_Number)
+    i.Sprites_Life                           0x00001c80   Section        0  spaceinvaders.o(i.Sprites_Life)
+    i.Sprites_Number                         0x00001d7c   Section        0  sprite.o(i.Sprites_Number)
+    i.Switch_Init                            0x00001d88   Section        0  switch.o(i.Switch_Init)
+    i.SysTick_Handler                        0x00001df8   Section        0  sound.o(i.SysTick_Handler)
+    i.SysTick_Init                           0x00001e04   Section        0  sound.o(i.SysTick_Init)
+    i.TExaS_Init                             0x00001e34   Section        0  texas.o(i.TExaS_Init)
+    i.TheMonster                             0x00001ff8   Section        0  sprite.o(i.TheMonster)
+    TheMonster                               0x00001ff9   Thumb Code    86  sprite.o(i.TheMonster)
+    i.Timer2A_Handler                        0x00002064   Section        0  spaceinvaders.o(i.Timer2A_Handler)
+    i.Timer2_Init                            0x00002088   Section        0  spaceinvaders.o(i.Timer2_Init)
+    i.Timer4A_Handler                        0x000020f8   Section        0  texas.o(i.Timer4A_Handler)
+    i.Timer5A_Handler                        0x00002118   Section        0  texas.o(i.Timer5A_Handler)
+    i.UART0_Init                             0x00002148   Section        0  texas.o(i.UART0_Init)
+    i.lcdwrite                               0x00002208   Section        0  nokia5110.o(i.lcdwrite)
+    lcdwrite                                 0x00002209   Thumb Code    66  nokia5110.o(i.lcdwrite)
+    i.main                                   0x00002254   Section        0  spaceinvaders.o(i.main)
+    .constdata                               0x00002348   Section      480  nokia5110.o(.constdata)
+    ASCII                                    0x00002348   Data         480  nokia5110.o(.constdata)
+    .constdata                               0x00002528   Section      360  texas.o(.constdata)
+    .constdata                               0x00002690   Section    15435  sound.o(.constdata)
+    .constdata                               0x000062db   Section     4274  graphics.o(.constdata)
+    .data                                    0x20000000   Section       23  spaceinvaders.o(.data)
+    ShieldLifeLevel                          0x20000000   Data           1  spaceinvaders.o(.data)
+    .data                                    0x20000018   Section       52  texas.o(.data)
+    .data                                    0x2000004c   Section       12  sound.o(.data)
+    .data                                    0x20000058   Section       11  sprite.o(.data)
+    SpriteFirePosition                       0x2000005c   Data           4  sprite.o(.data)
+    SpriteFireSpeed                          0x20000060   Data           1  sprite.o(.data)
+    NumberofSpritesAlive                     0x20000061   Data           1  sprite.o(.data)
+    NumberofSprites                          0x20000062   Data           1  sprite.o(.data)
+    .data                                    0x20000064   Section       12  spaceship.o(.data)
+    FirePosition                             0x2000006c   Data           4  spaceship.o(.data)
+    DATA                                     0x20000070   Section        4  random.o(DATA)
+    M                                        0x20000070   Data           4  random.o(DATA)
+    .bss                                     0x20000074   Section      504  nokia5110.o(.bss)
+    .bss                                     0x2000026c   Section       16  spaceinvaders.o(.bss)
+    .bss                                     0x20000280   Section       56  texas.o(.bss)
+    .bss                                     0x200002b8   Section      436  sprite.o(.bss)
+    SpriteList                               0x200002dc   Data         160  sprite.o(.bss)
+    SpriteFireList                           0x2000037c   Data         240  sprite.o(.bss)
+    .bss                                     0x2000046c   Section      224  spaceship.o(.bss)
+    SpaceshipFireList                        0x2000046c   Data         192  spaceship.o(.bss)
+    PlayerSpaceship                          0x2000052c   Data          16  spaceship.o(.bss)
+    PlayerSpaceshipShield                    0x2000053c   Data          16  spaceship.o(.bss)
+    .bss                                     0x2000054c   Section       96  libspace.o(.bss)
+    HEAP                                     0x200005b0   Section        0  startup.o(HEAP)
+    STACK                                    0x200005b0   Section     1024  startup.o(STACK)
+    HeapMem                                  0x200005b0   Data           0  startup.o(HEAP)
+    StackMem                                 0x200005b0   Data           0  startup.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$UX$STANDARDLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  spaceinvaders.o ABSOLUTE
+    __Vectors                                0x00000000   Data           0  startup.o(RESET)
+    __ARM_exceptions_init                     - Undefined Weak Reference
+    __alloca_initialize                       - Undefined Weak Reference
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __rt_locale                               - Undefined Weak Reference
+    __sigvec_lookup                           - Undefined Weak Reference
+    _atexit_init                              - Undefined Weak Reference
+    _call_atexit_fns                          - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _fp_trap_init                             - Undefined Weak Reference
+    _fp_trap_shutdown                         - Undefined Weak Reference
+    _get_lc_collate                           - Undefined Weak Reference
+    _get_lc_ctype                             - Undefined Weak Reference
+    _get_lc_monetary                          - Undefined Weak Reference
+    _get_lc_numeric                           - Undefined Weak Reference
+    _get_lc_time                              - Undefined Weak Reference
+    _getenv_init                              - Undefined Weak Reference
+    _handle_redirection                       - Undefined Weak Reference
+    _init_alloc                               - Undefined Weak Reference
+    _init_user_alloc                          - Undefined Weak Reference
+    _initio                                   - Undefined Weak Reference
+    _rand_init                                - Undefined Weak Reference
+    _signal_finish                            - Undefined Weak Reference
+    _signal_init                              - Undefined Weak Reference
+    _terminate_alloc                          - Undefined Weak Reference
+    _terminate_user_alloc                     - Undefined Weak Reference
+    _terminateio                              - Undefined Weak Reference
+    Reset_Handler                            0x0000026d   Thumb Code     0  startup.o(RESET)
+    NMI_Handler                              0x00000271   Thumb Code     2  startup.o(RESET)
+    HardFault_Handler                        0x00000273   Thumb Code     2  startup.o(RESET)
+    MemManage_Handler                        0x00000275   Thumb Code     2  startup.o(RESET)
+    BusFault_Handler                         0x00000277   Thumb Code     2  startup.o(RESET)
+    UsageFault_Handler                       0x00000279   Thumb Code     2  startup.o(RESET)
+    SVC_Handler                              0x0000027b   Thumb Code     2  startup.o(RESET)
+    DebugMon_Handler                         0x0000027d   Thumb Code     2  startup.o(RESET)
+    PendSV_Handler                           0x0000027f   Thumb Code     2  startup.o(RESET)
+    ADC0Seq0_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC0Seq1_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC0Seq2_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC0Seq3_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC1Seq0_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC1Seq1_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC1Seq2_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC1Seq3_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    CAN0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    CAN1_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    CAN2_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    Comp0_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    Comp1_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    Comp2_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    Ethernet_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ExtBus_Handler                           0x00000283   Thumb Code     0  startup.o(RESET)
+    FPU_Handler                              0x00000283   Thumb Code     0  startup.o(RESET)
+    Fan0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    FlashCtl_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortA_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortB_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortC_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortD_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortE_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortF_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortG_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortH_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortJ_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortK_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortL_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortM_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortN_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP1_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP2_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP3_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP4_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP5_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP6_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP7_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortP_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ1_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ2_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ3_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ4_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ5_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ6_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ7_Handler                       0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortR_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortS_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    Hibernate_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C1_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C2_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C3_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C4_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C5_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    I2S0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    LPC0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    PECI0_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Fault_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Generator0_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Generator1_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Generator2_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Generator3_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM1Fault_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM1Generator0_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM1Generator1_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM1Generator2_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM1Generator3_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    Quadrature0_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    Quadrature1_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    Quadrature2_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    SSI0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    SSI1_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    SSI2_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    SSI3_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    SysCtl_Handler                           0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer0A_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer0B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer1A_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer1B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer2B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer3A_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer3B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer4B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer5B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    UART0_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART1_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART2_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART3_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART4_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART5_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART6_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART7_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    USB0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    WDT_Handler                              0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer0A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer0B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer1A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer1B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer2A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer2B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer3A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer3B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer4A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer4B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer5A_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    WideTimer5B_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    uDMA_Error                               0x00000283   Thumb Code     0  startup.o(RESET)
+    uDMA_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    __main                                   0x00000285   Thumb Code     8  __main.o(!!!main)
+    __scatterload                            0x0000028d   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_rt2                        0x0000028d   Thumb Code    44  __scatter.o(!!!scatter)
+    __scatterload_rt2_thumb_only             0x0000028d   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_null                       0x0000029b   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_copy                       0x000002c1   Thumb Code    26  __scatter_copy.o(!!handler_copy)
+    __scatterload_zeroinit                   0x000002dd   Thumb Code    28  __scatter_zi.o(!!handler_zi)
+    __rt_lib_init                            0x000002f9   Thumb Code     0  libinit.o(.ARM.Collect$$libinit$$00000000)
+    __rt_lib_init_alloca_1                   0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002C)
+    __rt_lib_init_argv_1                     0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002A)
+    __rt_lib_init_atexit_1                   0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    __rt_lib_init_clock_1                    0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    __rt_lib_init_cpp_1                      0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    __rt_lib_init_exceptions_1               0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    __rt_lib_init_fp_1                       0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000002)
+    __rt_lib_init_fp_trap_1                  0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    __rt_lib_init_getenv_1                   0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    __rt_lib_init_heap_1                     0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000008)
+    __rt_lib_init_lc_collate_1               0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000F)
+    __rt_lib_init_lc_ctype_1                 0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    __rt_lib_init_lc_monetary_1              0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    __rt_lib_init_lc_numeric_1               0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    __rt_lib_init_lc_time_1                  0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    __rt_lib_init_rand_1                     0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    __rt_lib_init_return                     0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000031)
+    __rt_lib_init_signal_1                   0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    __rt_lib_init_stdio_1                    0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    __rt_lib_init_user_alloc_1               0x000002fb   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000A)
+    __rt_lib_shutdown                        0x000002fd   Thumb Code     0  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    __rt_lib_shutdown_fp_trap_1              0x000002ff   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000006)
+    __rt_lib_shutdown_heap_1                 0x000002ff   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E)
+    __rt_lib_shutdown_return                 0x000002ff   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F)
+    __rt_lib_shutdown_signal_1               0x000002ff   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000009)
+    __rt_lib_shutdown_stdio_1                0x000002ff   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000003)
+    __rt_lib_shutdown_user_alloc_1           0x000002ff   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000B)
+    __rt_entry                               0x00000301   Thumb Code     0  rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    __rt_entry_presh_1                       0x00000301   Thumb Code     0  rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    __rt_entry_sh                            0x00000301   Thumb Code     0  rtentry4.o(.ARM.Collect$$rtentry$$00000004)
+    __rt_entry_li                            0x00000307   Thumb Code     0  rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    __rt_entry_postsh_1                      0x00000307   Thumb Code     0  rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    __rt_entry_main                          0x0000030b   Thumb Code     0  rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    __rt_entry_postli_1                      0x0000030b   Thumb Code     0  rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    __rt_exit                                0x00000313   Thumb Code     0  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    __rt_exit_ls                             0x00000315   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    __rt_exit_prels_1                        0x00000315   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    __rt_exit_exit                           0x00000319   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    DisableInterrupts                        0x00000321   Thumb Code     0  startup.o(.text)
+    EnableInterrupts                         0x00000325   Thumb Code     0  startup.o(.text)
+    StartCritical                            0x00000329   Thumb Code     0  startup.o(.text)
+    EndCritical                              0x00000331   Thumb Code     0  startup.o(.text)
+    WaitForInterrupt                         0x00000337   Thumb Code     0  startup.o(.text)
+    __user_initial_stackheap                 0x0000033b   Thumb Code     0  startup.o(.text)
+    Random_Init                              0x00000351   Thumb Code     0  random.o(.text)
+    Random32                                 0x0000035b   Thumb Code     2  random.o(.text)
+    Random                                   0x0000036d   Thumb Code     2  random.o(.text)
+    __use_two_region_memory                  0x00000391   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_escrow$2region                 0x00000393   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_expand$2region                 0x00000395   Thumb Code     2  heapauxi.o(.text)
+    __user_setup_stackheap                   0x00000397   Thumb Code    74  sys_stackheap_outer.o(.text)
+    exit                                     0x000003e1   Thumb Code    12  exit.o(.text)
+    __user_libspace                          0x000003ed   Thumb Code     8  libspace.o(.text)
+    __user_perproc_libspace                  0x000003ed   Thumb Code     0  libspace.o(.text)
+    __user_perthread_libspace                0x000003ed   Thumb Code     0  libspace.o(.text)
+    _sys_exit                                0x000003f5   Thumb Code     8  sys_exit.o(.text)
+    __I$use$semihosting                      0x00000401   Thumb Code     0  use_no_semi.o(.text)
+    __use_no_semihosting_swi                 0x00000401   Thumb Code     2  use_no_semi.o(.text)
+    __semihosting_library_function           0x00000403   Thumb Code     0  indicate_semi.o(.text)
+    ADC0_In                                  0x00000405   Thumb Code    36  adc.o(i.ADC0_In)
+    ADC0_Init                                0x00000431   Thumb Code   172  adc.o(i.ADC0_Init)
+    ADC1_In                                  0x00000501   Thumb Code     6  texas.o(i.ADC1_In)
+    ADC1_Init                                0x0000050d   Thumb Code   174  texas.o(i.ADC1_Init)
+    DAC_Init                                 0x000005ed   Thumb Code   100  dac.o(i.DAC_Init)
+    DAC_Out                                  0x0000066d   Thumb Code     6  dac.o(i.DAC_Out)
+    Delay5ms                                 0x00000679   Thumb Code    32  spaceinvaders.o(i.Delay5ms)
+    Game_Next_Level                          0x00000a11   Thumb Code   138  spaceinvaders.o(i.Game_Next_Level)
+    Game_Over                                0x00000ac5   Thumb Code    88  spaceinvaders.o(i.Game_Over)
+    Graphics_BigExplosion0                   0x00000b49   Thumb Code     4  graphics.o(i.Graphics_BigExplosion0)
+    Graphics_BigExplosion_Height             0x00000b51   Thumb Code     6  graphics.o(i.Graphics_BigExplosion_Height)
+    Graphics_BigExplosion_Width              0x00000b5d   Thumb Code     6  graphics.o(i.Graphics_BigExplosion_Width)
+    Graphics_Bunker0                         0x00000b69   Thumb Code     4  graphics.o(i.Graphics_Bunker0)
+    Graphics_Bunker1                         0x00000b71   Thumb Code     4  graphics.o(i.Graphics_Bunker1)
+    Graphics_Bunker2                         0x00000b79   Thumb Code     4  graphics.o(i.Graphics_Bunker2)
+    Graphics_Bunker3                         0x00000b81   Thumb Code     4  graphics.o(i.Graphics_Bunker3)
+    Graphics_Bunker_Height                   0x00000b89   Thumb Code     6  graphics.o(i.Graphics_Bunker_Height)
+    Graphics_Bunker_Width                    0x00000b95   Thumb Code     6  graphics.o(i.Graphics_Bunker_Width)
+    Graphics_Enemy30_Height                  0x00000ba1   Thumb Code     6  graphics.o(i.Graphics_Enemy30_Height)
+    Graphics_Enemy30_Width                   0x00000bad   Thumb Code     6  graphics.o(i.Graphics_Enemy30_Width)
+    Graphics_Laser0                          0x00000bb9   Thumb Code     4  graphics.o(i.Graphics_Laser0)
+    Graphics_Laser_Height                    0x00000bc1   Thumb Code     6  graphics.o(i.Graphics_Laser_Height)
+    Graphics_Laser_Width                     0x00000bcd   Thumb Code     6  graphics.o(i.Graphics_Laser_Width)
+    Graphics_Missile0                        0x00000bd9   Thumb Code     4  graphics.o(i.Graphics_Missile0)
+    Graphics_Missle_Height                   0x00000be1   Thumb Code     6  graphics.o(i.Graphics_Missle_Height)
+    Graphics_Missle_Width                    0x00000bed   Thumb Code     6  graphics.o(i.Graphics_Missle_Width)
+    Graphics_Monster                         0x00000bf9   Thumb Code     4  graphics.o(i.Graphics_Monster)
+    Graphics_Monster_Height                  0x00000c01   Thumb Code     6  graphics.o(i.Graphics_Monster_Height)
+    Graphics_Monster_Width                   0x00000c0d   Thumb Code     6  graphics.o(i.Graphics_Monster_Width)
+    Graphics_PlayerShip0                     0x00000c19   Thumb Code     4  graphics.o(i.Graphics_PlayerShip0)
+    Graphics_Player_Height                   0x00000c21   Thumb Code     6  graphics.o(i.Graphics_Player_Height)
+    Graphics_Player_Width                    0x00000c2d   Thumb Code     6  graphics.o(i.Graphics_Player_Width)
+    Graphics_SmallEnemy10PointA              0x00000c39   Thumb Code     4  graphics.o(i.Graphics_SmallEnemy10PointA)
+    Graphics_SmallEnemy20PointA              0x00000c41   Thumb Code     4  graphics.o(i.Graphics_SmallEnemy20PointA)
+    Graphics_SmallEnemy30PointA              0x00000c49   Thumb Code     4  graphics.o(i.Graphics_SmallEnemy30PointA)
+    Graphics_SmallExplosion0                 0x00000c51   Thumb Code     4  graphics.o(i.Graphics_SmallExplosion0)
+    Graphics_SmallExplosion_Height           0x00000c59   Thumb Code     6  graphics.o(i.Graphics_SmallExplosion_Height)
+    Graphics_SmallExplosion_Width            0x00000c65   Thumb Code     6  graphics.o(i.Graphics_SmallExplosion_Width)
+    LED1_Toggle                              0x00000c71   Thumb Code    16  led.o(i.LED1_Toggle)
+    LED_Init                                 0x00000c89   Thumb Code   100  led.o(i.LED_Init)
+    Nokia5110_Clear                          0x00000dbd   Thumb Code    32  nokia5110.o(i.Nokia5110_Clear)
+    Nokia5110_ClearBuffer                    0x00000ddd   Thumb Code    20  nokia5110.o(i.Nokia5110_ClearBuffer)
+    Nokia5110_DisplayBuffer                  0x00000df5   Thumb Code    10  nokia5110.o(i.Nokia5110_DisplayBuffer)
+    Nokia5110_DrawFullImage                  0x00000e05   Thumb Code    34  nokia5110.o(i.Nokia5110_DrawFullImage)
+    Nokia5110_Init                           0x00000e29   Thumb Code   316  nokia5110.o(i.Nokia5110_Init)
+    Nokia5110_OutChar                        0x00000f95   Thumb Code    52  nokia5110.o(i.Nokia5110_OutChar)
+    Nokia5110_OutString                      0x00000fcd   Thumb Code    22  nokia5110.o(i.Nokia5110_OutString)
+    Nokia5110_OutUDec                        0x00000fe3   Thumb Code   370  nokia5110.o(i.Nokia5110_OutUDec)
+    Nokia5110_PrintBMP                       0x00001155   Thumb Code   420  nokia5110.o(i.Nokia5110_PrintBMP)
+    Nokia5110_SetCursor                      0x000012fd   Thumb Code    48  nokia5110.o(i.Nokia5110_SetCursor)
+    PLL_Init                                 0x0000132d   Thumb Code   118  texas.o(i.PLL_Init)
+    Play                                     0x000013a9   Thumb Code    42  sound.o(i.Play)
+    Play_Next_Level                          0x000013e1   Thumb Code    52  sprite.o(i.Play_Next_Level)
+    Player_Change_Weapon                     0x00001415   Thumb Code    50  spaceinvaders.o(i.Player_Change_Weapon)
+    Player_Fire                              0x0000144d   Thumb Code    42  spaceinvaders.o(i.Player_Fire)
+    SW1_Pressed                              0x0000147d   Thumb Code    18  switch.o(i.SW1_Pressed)
+    SW2_Pressed                              0x00001495   Thumb Code    18  switch.o(i.SW2_Pressed)
+    Score_Update                             0x000014ad   Thumb Code    12  spaceinvaders.o(i.Score_Update)
+    SetCode                                  0x000014bd   Thumb Code    20  texas.o(i.SetCode)
+    SetCourse                                0x000014d5   Thumb Code    20  texas.o(i.SetCourse)
+    ShieldGraphicsPtr_init                   0x000014ed   Thumb Code    20  spaceinvaders.o(i.ShieldGraphicsPtr_init)
+    Sound_Explosion                          0x00001515   Thumb Code    14  sound.o(i.Sound_Explosion)
+    Sound_Highpitch                          0x00001529   Thumb Code    14  sound.o(i.Sound_Highpitch)
+    Sound_Init                               0x0000153d   Thumb Code    26  sound.o(i.Sound_Init)
+    Sound_Killed                             0x00001561   Thumb Code    14  sound.o(i.Sound_Killed)
+    Sound_Play                               0x00001575   Thumb Code    16  sound.o(i.Sound_Play)
+    Sound_Shoot                              0x00001591   Thumb Code    14  sound.o(i.Sound_Shoot)
+    Spaceship_Change_Weapon                  0x000015dd   Thumb Code     2  spaceship.o(i.Spaceship_Change_Weapon)
+    Spaceship_Data                           0x000015e1   Thumb Code     4  spaceship.o(i.Spaceship_Data)
+    Spaceship_Fire                           0x000015e9   Thumb Code   116  spaceship.o(i.Spaceship_Fire)
+    Spaceship_Fire_Clear                     0x00001665   Thumb Code    74  spaceship.o(i.Spaceship_Fire_Clear)
+    Spaceship_Fire_List                      0x000016b5   Thumb Code     4  spaceship.o(i.Spaceship_Fire_List)
+    Spaceship_Fire_MoveUp                    0x000016bd   Thumb Code   138  spaceship.o(i.Spaceship_Fire_MoveUp)
+    Spaceship_Fire_Number                    0x0000174d   Thumb Code     4  spaceship.o(i.Spaceship_Fire_Number)
+    Spaceship_Init                           0x00001751   Thumb Code    54  spaceship.o(i.Spaceship_Init)
+    Spaceship_Move                           0x0000178d   Thumb Code    16  spaceship.o(i.Spaceship_Move)
+    Spaceship_Position                       0x000017a1   Thumb Code    28  spaceship.o(i.Spaceship_Position)
+    Spaceship_Shield                         0x000017c5   Thumb Code     8  spaceship.o(i.Spaceship_Shield)
+    Spaceship_Shield_Data                    0x000017cd   Thumb Code     4  spaceship.o(i.Spaceship_Shield_Data)
+    Spaceship_Shield_Init                    0x000017d5   Thumb Code    58  spaceship.o(i.Spaceship_Shield_Init)
+    Spcaeship_Alive                          0x00001815   Thumb Code   182  spaceinvaders.o(i.Spcaeship_Alive)
+    Spcaeship_Shield_Status                  0x000018cd   Thumb Code   198  spaceinvaders.o(i.Spcaeship_Shield_Status)
+    Sprite_Fire                              0x00001aa1   Thumb Code   188  sprite.o(i.Sprite_Fire)
+    Sprite_Fire_Clear                        0x00001b71   Thumb Code    24  sprite.o(i.Sprite_Fire_Clear)
+    Sprite_Fire_List                         0x00001b8d   Thumb Code     4  sprite.o(i.Sprite_Fire_List)
+    Sprite_Fire_MoveDown                     0x00001b95   Thumb Code   130  sprite.o(i.Sprite_Fire_MoveDown)
+    Sprite_Init                              0x00001c1d   Thumb Code    16  sprite.o(i.Sprite_Init)
+    Sprite_Is_Killed                         0x00001c3d   Thumb Code    12  sprite.o(i.Sprite_Is_Killed)
+    Sprite_List                              0x00001c4d   Thumb Code     4  sprite.o(i.Sprite_List)
+    Sprite_Move                              0x00001c55   Thumb Code    22  sprite.o(i.Sprite_Move)
+    Sprites_Alive_Count                      0x00001c71   Thumb Code     6  sprite.o(i.Sprites_Alive_Count)
+    Sprites_Fire_Number                      0x00001c7d   Thumb Code     4  sprite.o(i.Sprites_Fire_Number)
+    Sprites_Life                             0x00001c81   Thumb Code   252  spaceinvaders.o(i.Sprites_Life)
+    Sprites_Number                           0x00001d7d   Thumb Code     6  sprite.o(i.Sprites_Number)
+    Switch_Init                              0x00001d89   Thumb Code    88  switch.o(i.Switch_Init)
+    SysTick_Handler                          0x00001df9   Thumb Code    12  sound.o(i.SysTick_Handler)
+    SysTick_Init                             0x00001e05   Thumb Code    42  sound.o(i.SysTick_Init)
+    TExaS_Init                               0x00001e35   Thumb Code   324  texas.o(i.TExaS_Init)
+    Timer2A_Handler                          0x00002065   Thumb Code    24  spaceinvaders.o(i.Timer2A_Handler)
+    Timer2_Init                              0x00002089   Thumb Code    88  spaceinvaders.o(i.Timer2_Init)
+    Timer4A_Handler                          0x000020f9   Thumb Code    20  texas.o(i.Timer4A_Handler)
+    Timer5A_Handler                          0x00002119   Thumb Code    34  texas.o(i.Timer5A_Handler)
+    UART0_Init                               0x00002149   Thumb Code   160  texas.o(i.UART0_Init)
+    main                                     0x00002255   Thumb Code   216  spaceinvaders.o(i.main)
+    NoInputMsg                               0x00002528   Data          40  texas.o(.constdata)
+    OutputPortMsg0                           0x00002550   Data          40  texas.o(.constdata)
+    OutputPortMsg1                           0x00002578   Data          40  texas.o(.constdata)
+    OutputPortMsg2                           0x000025a0   Data          40  texas.o(.constdata)
+    OutputPortMsg3                           0x000025c8   Data          40  texas.o(.constdata)
+    BlankMsg                                 0x000025f0   Data          40  texas.o(.constdata)
+    InitializedMsg                           0x00002618   Data          40  texas.o(.constdata)
+    IntroMsg                                 0x00002640   Data          40  texas.o(.constdata)
+    DoneMsg                                  0x00002668   Data          40  texas.o(.constdata)
+    shoot                                    0x00002690   Data        4080  sound.o(.constdata)
+    invaderkilled                            0x00003680   Data        3377  sound.o(.constdata)
+    explosion                                0x000043b1   Data        2000  sound.o(.constdata)
+    fastinvader1                             0x00004b81   Data         982  sound.o(.constdata)
+    fastinvader2                             0x00004f57   Data        1042  sound.o(.constdata)
+    fastinvader3                             0x00005369   Data        1054  sound.o(.constdata)
+    fastinvader4                             0x00005787   Data        1098  sound.o(.constdata)
+    highpitch                                0x00005bd1   Data        1802  sound.o(.constdata)
+    SmallEnemy30PointA                       0x000062db   Data         199  graphics.o(.constdata)
+    SmallEnemy30PointB                       0x000063a2   Data         199  graphics.o(.constdata)
+    SmallEnemy20PointA                       0x00006469   Data         199  graphics.o(.constdata)
+    SmallEnemy20PointB                       0x00006530   Data         199  graphics.o(.constdata)
+    SmallEnemy10PointA                       0x000065f7   Data         199  graphics.o(.constdata)
+    SmallEnemy10PointB                       0x000066be   Data         199  graphics.o(.constdata)
+    PlayerShip0                              0x00006785   Data         215  graphics.o(.constdata)
+    SmallEnemyBonus0                         0x0000685c   Data         203  graphics.o(.constdata)
+    Bunker0                                  0x00006927   Data         179  graphics.o(.constdata)
+    Bunker1                                  0x000069da   Data         179  graphics.o(.constdata)
+    Bunker2                                  0x00006a8d   Data         179  graphics.o(.constdata)
+    Bunker3                                  0x00006b40   Data         179  graphics.o(.constdata)
+    BigExplosion0                            0x00006bf3   Data         215  graphics.o(.constdata)
+    BigExplosion1                            0x00006cca   Data         215  graphics.o(.constdata)
+    SmallExplosion0                          0x00006da1   Data         199  graphics.o(.constdata)
+    SmallExplosion1                          0x00006e68   Data         199  graphics.o(.constdata)
+    Missile0                                 0x00006f2f   Data         155  graphics.o(.constdata)
+    Missile1                                 0x00006fca   Data         155  graphics.o(.constdata)
+    Missile2                                 0x00007065   Data         155  graphics.o(.constdata)
+    Laser0                                   0x00007100   Data         155  graphics.o(.constdata)
+    Laser1                                   0x0000719b   Data         155  graphics.o(.constdata)
+    Monster                                  0x00007236   Data         343  graphics.o(.constdata)
+    Region$$Table$$Base                      0x00007390   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000073b0   Number         0  anon$$obj.o(Region$$Table)
+    TimerCount                               0x20000004   Data           4  spaceinvaders.o(.data)
+    Semaphore                                0x20000008   Data           4  spaceinvaders.o(.data)
+    NumberOfTrials                           0x2000000c   Data           1  spaceinvaders.o(.data)
+    Score                                    0x20000010   Data           4  spaceinvaders.o(.data)
+    SW1debounce                              0x20000014   Data           1  spaceinvaders.o(.data)
+    SW2debounce                              0x20000015   Data           1  spaceinvaders.o(.data)
+    GameLevel                                0x20000016   Data           1  spaceinvaders.o(.data)
+    TExaS_Period                             0x20000018   Data           4  texas.o(.data)
+    TExaS_Ports                              0x2000001c   Data           8  texas.o(.data)
+    Display                                  0x20000024   Data           1  texas.o(.data)
+    TExaS_Meter                              0x20000028   Data           4  texas.o(.data)
+    ADCnum                                   0x2000002c   Data           4  texas.o(.data)
+    LastMode                                 0x20000030   Data           4  texas.o(.data)
+    bFlag                                    0x20000034   Data           4  texas.o(.data)
+    Count                                    0x20000038   Data           4  texas.o(.data)
+    DelayBetweenTests                        0x2000003c   Data           4  texas.o(.data)
+    TExaS_Test                               0x20000040   Data           4  texas.o(.data)
+    ScopeMode                                0x20000044   Data           4  texas.o(.data)
+    ScopeCount                               0x20000048   Data           4  texas.o(.data)
+    Index                                    0x2000004c   Data           4  sound.o(.data)
+    SoundSize                                0x20000050   Data           4  sound.o(.data)
+    Wave                                     0x20000054   Data           4  sound.o(.data)
+    direction                                0x20000058   Data           1  sprite.o(.data)
+    ADCdata                                  0x20000064   Data           4  spaceship.o(.data)
+    Position                                 0x20000068   Data           4  spaceship.o(.data)
+    Screen                                   0x20000074   Data         504  nokia5110.o(.bss)
+    ShieldGraphicsPtr                        0x2000026c   Data          16  spaceinvaders.o(.bss)
+    TExaS                                    0x20000280   Data          56  texas.o(.bss)
+    GraphicEnemyPtr                          0x200002b8   Data          12  sprite.o(.bss)
+    GraphicEnemySizePtr                      0x200002c4   Data          24  sprite.o(.bss)
+    __libspace_start                         0x2000054c   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x200005ac   Data           0  libspace.o(.bss)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x0000026d
+
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00007424, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x000073b0, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000284   Code   RO            3  * RESET               startup.o
+    0x00000284   0x00000008   Code   RO         1049  * !!!main             c_w.l(__main.o)
+    0x0000028c   0x00000034   Code   RO         1203    !!!scatter          c_w.l(__scatter.o)
+    0x000002c0   0x0000001a   Code   RO         1205    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x000002da   0x00000002   PAD
+    0x000002dc   0x0000001c   Code   RO         1207    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x000002f8   0x00000002   Code   RO         1076    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x000002fa   0x00000000   Code   RO         1083    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1086    .ARM.Collect$$libinit$$00000008  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1088    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1090    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1093    .ARM.Collect$$libinit$$0000000F  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1095    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1097    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1099    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1101    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1103    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1105    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1107    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1109    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1111    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1113    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1117    .ARM.Collect$$libinit$$0000002A  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1119    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1121    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO         1123    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x000002fa   0x00000002   Code   RO         1124    .ARM.Collect$$libinit$$00000031  c_w.l(libinit2.o)
+    0x000002fc   0x00000002   Code   RO         1144    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x000002fe   0x00000000   Code   RO         1158    .ARM.Collect$$libshutdown$$00000003  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000000   Code   RO         1161    .ARM.Collect$$libshutdown$$00000006  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000000   Code   RO         1164    .ARM.Collect$$libshutdown$$00000009  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000000   Code   RO         1166    .ARM.Collect$$libshutdown$$0000000B  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000000   Code   RO         1169    .ARM.Collect$$libshutdown$$0000000E  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000002   Code   RO         1170    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x00000300   0x00000000   Code   RO         1051    .ARM.Collect$$rtentry$$00000000  c_w.l(rtentry.o)
+    0x00000300   0x00000000   Code   RO         1053    .ARM.Collect$$rtentry$$00000002  c_w.l(rtentry2.o)
+    0x00000300   0x00000006   Code   RO         1065    .ARM.Collect$$rtentry$$00000004  c_w.l(rtentry4.o)
+    0x00000306   0x00000000   Code   RO         1055    .ARM.Collect$$rtentry$$00000009  c_w.l(rtentry2.o)
+    0x00000306   0x00000004   Code   RO         1056    .ARM.Collect$$rtentry$$0000000A  c_w.l(rtentry2.o)
+    0x0000030a   0x00000000   Code   RO         1058    .ARM.Collect$$rtentry$$0000000C  c_w.l(rtentry2.o)
+    0x0000030a   0x00000008   Code   RO         1059    .ARM.Collect$$rtentry$$0000000D  c_w.l(rtentry2.o)
+    0x00000312   0x00000002   Code   RO         1080    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x00000314   0x00000000   Code   RO         1126    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x00000314   0x00000004   Code   RO         1127    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x00000318   0x00000006   Code   RO         1128    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x0000031e   0x00000002   PAD
+    0x00000320   0x00000030   Code   RO            4    .text               startup.o
+    0x00000350   0x00000040   Code   RO           92    .text               random.o
+    0x00000390   0x00000006   Code   RO         1047    .text               c_w.l(heapauxi.o)
+    0x00000396   0x0000004a   Code   RO         1067    .text               c_w.l(sys_stackheap_outer.o)
+    0x000003e0   0x0000000c   Code   RO         1069    .text               c_w.l(exit.o)
+    0x000003ec   0x00000008   Code   RO         1077    .text               c_w.l(libspace.o)
+    0x000003f4   0x0000000c   Code   RO         1136    .text               c_w.l(sys_exit.o)
+    0x00000400   0x00000002   Code   RO         1147    .text               c_w.l(use_no_semi.o)
+    0x00000402   0x00000000   Code   RO         1149    .text               c_w.l(indicate_semi.o)
+    0x00000402   0x00000002   PAD
+    0x00000404   0x0000002c   Code   RO          869    i.ADC0_In           adc.o
+    0x00000430   0x000000d0   Code   RO          870    i.ADC0_Init         adc.o
+    0x00000500   0x0000000c   Code   RO          212    i.ADC1_In           texas.o
+    0x0000050c   0x000000d4   Code   RO          213    i.ADC1_Init         texas.o
+    0x000005e0   0x0000000c   Code   RO          890    i.Convert           spaceship.o
+    0x000005ec   0x00000080   Code   RO          422    i.DAC_Init          dac.o
+    0x0000066c   0x0000000c   Code   RO          423    i.DAC_Out           dac.o
+    0x00000678   0x00000020   Code   RO           96    i.Delay5ms          spaceinvaders.o
+    0x00000698   0x000000c0   Code   RO          443    i.DifficultyLevel_1  sprite.o
+    0x00000758   0x00000158   Code   RO          444    i.DifficultyLevel_2  sprite.o
+    0x000008b0   0x00000160   Code   RO          445    i.DifficultyLevel_3  sprite.o
+    0x00000a10   0x000000b4   Code   RO           97    i.Game_Next_Level   spaceinvaders.o
+    0x00000ac4   0x00000084   Code   RO           98    i.Game_Over         spaceinvaders.o
+    0x00000b48   0x00000008   Code   RO          595    i.Graphics_BigExplosion0  graphics.o
+    0x00000b50   0x0000000c   Code   RO          597    i.Graphics_BigExplosion_Height  graphics.o
+    0x00000b5c   0x0000000c   Code   RO          598    i.Graphics_BigExplosion_Width  graphics.o
+    0x00000b68   0x00000008   Code   RO          599    i.Graphics_Bunker0  graphics.o
+    0x00000b70   0x00000008   Code   RO          600    i.Graphics_Bunker1  graphics.o
+    0x00000b78   0x00000008   Code   RO          601    i.Graphics_Bunker2  graphics.o
+    0x00000b80   0x00000008   Code   RO          602    i.Graphics_Bunker3  graphics.o
+    0x00000b88   0x0000000c   Code   RO          603    i.Graphics_Bunker_Height  graphics.o
+    0x00000b94   0x0000000c   Code   RO          604    i.Graphics_Bunker_Width  graphics.o
+    0x00000ba0   0x0000000c   Code   RO          609    i.Graphics_Enemy30_Height  graphics.o
+    0x00000bac   0x0000000c   Code   RO          610    i.Graphics_Enemy30_Width  graphics.o
+    0x00000bb8   0x00000008   Code   RO          613    i.Graphics_Laser0   graphics.o
+    0x00000bc0   0x0000000c   Code   RO          615    i.Graphics_Laser_Height  graphics.o
+    0x00000bcc   0x0000000c   Code   RO          616    i.Graphics_Laser_Width  graphics.o
+    0x00000bd8   0x00000008   Code   RO          617    i.Graphics_Missile0  graphics.o
+    0x00000be0   0x0000000c   Code   RO          620    i.Graphics_Missle_Height  graphics.o
+    0x00000bec   0x0000000c   Code   RO          621    i.Graphics_Missle_Width  graphics.o
+    0x00000bf8   0x00000008   Code   RO          622    i.Graphics_Monster  graphics.o
+    0x00000c00   0x0000000c   Code   RO          623    i.Graphics_Monster_Height  graphics.o
+    0x00000c0c   0x0000000c   Code   RO          624    i.Graphics_Monster_Width  graphics.o
+    0x00000c18   0x00000008   Code   RO          625    i.Graphics_PlayerShip0  graphics.o
+    0x00000c20   0x0000000c   Code   RO          626    i.Graphics_Player_Height  graphics.o
+    0x00000c2c   0x0000000c   Code   RO          627    i.Graphics_Player_Width  graphics.o
+    0x00000c38   0x00000008   Code   RO          628    i.Graphics_SmallEnemy10PointA  graphics.o
+    0x00000c40   0x00000008   Code   RO          630    i.Graphics_SmallEnemy20PointA  graphics.o
+    0x00000c48   0x00000008   Code   RO          632    i.Graphics_SmallEnemy30PointA  graphics.o
+    0x00000c50   0x00000008   Code   RO          635    i.Graphics_SmallExplosion0  graphics.o
+    0x00000c58   0x0000000c   Code   RO          637    i.Graphics_SmallExplosion_Height  graphics.o
+    0x00000c64   0x0000000c   Code   RO          638    i.Graphics_SmallExplosion_Width  graphics.o
+    0x00000c70   0x00000018   Code   RO          999    i.LED1_Toggle       led.o
+    0x00000c88   0x00000080   Code   RO         1003    i.LED_Init          led.o
+    0x00000d08   0x000000b4   Code   RO          446    i.MonsterMove       sprite.o
+    0x00000dbc   0x00000020   Code   RO           12    i.Nokia5110_Clear   nokia5110.o
+    0x00000ddc   0x00000018   Code   RO           13    i.Nokia5110_ClearBuffer  nokia5110.o
+    0x00000df4   0x00000010   Code   RO           14    i.Nokia5110_DisplayBuffer  nokia5110.o
+    0x00000e04   0x00000022   Code   RO           15    i.Nokia5110_DrawFullImage  nokia5110.o
+    0x00000e26   0x00000002   PAD
+    0x00000e28   0x0000016c   Code   RO           16    i.Nokia5110_Init    nokia5110.o
+    0x00000f94   0x00000038   Code   RO           17    i.Nokia5110_OutChar  nokia5110.o
+    0x00000fcc   0x00000016   Code   RO           18    i.Nokia5110_OutString  nokia5110.o
+    0x00000fe2   0x00000172   Code   RO           19    i.Nokia5110_OutUDec  nokia5110.o
+    0x00001154   0x000001a8   Code   RO           20    i.Nokia5110_PrintBMP  nokia5110.o
+    0x000012fc   0x00000030   Code   RO           21    i.Nokia5110_SetCursor  nokia5110.o
+    0x0000132c   0x0000007c   Code   RO          214    i.PLL_Init          texas.o
+    0x000013a8   0x00000038   Code   RO          331    i.Play              sound.o
+    0x000013e0   0x00000034   Code   RO          447    i.Play_Next_Level   sprite.o
+    0x00001414   0x00000038   Code   RO           99    i.Player_Change_Weapon  spaceinvaders.o
+    0x0000144c   0x00000030   Code   RO          100    i.Player_Fire       spaceinvaders.o
+    0x0000147c   0x00000018   Code   RO          571    i.SW1_Pressed       switch.o
+    0x00001494   0x00000018   Code   RO          572    i.SW2_Pressed       switch.o
+    0x000014ac   0x00000010   Code   RO          101    i.Score_Update      spaceinvaders.o
+    0x000014bc   0x00000018   Code   RO          215    i.SetCode           texas.o
+    0x000014d4   0x00000018   Code   RO          216    i.SetCourse         texas.o
+    0x000014ec   0x00000028   Code   RO          102    i.ShieldGraphicsPtr_init  spaceinvaders.o
+    0x00001514   0x00000014   Code   RO          332    i.Sound_Explosion   sound.o
+    0x00001528   0x00000014   Code   RO          337    i.Sound_Highpitch   sound.o
+    0x0000153c   0x00000024   Code   RO          338    i.Sound_Init        sound.o
+    0x00001560   0x00000014   Code   RO          339    i.Sound_Killed      sound.o
+    0x00001574   0x0000001c   Code   RO          340    i.Sound_Play        sound.o
+    0x00001590   0x00000014   Code   RO          341    i.Sound_Shoot       sound.o
+    0x000015a4   0x0000001c   Code   RO          891    i.SpaceshipDraw     spaceship.o
+    0x000015c0   0x0000001c   Code   RO          892    i.SpaceshipShieldDraw  spaceship.o
+    0x000015dc   0x00000002   Code   RO          893    i.Spaceship_Change_Weapon  spaceship.o
+    0x000015de   0x00000002   PAD
+    0x000015e0   0x00000008   Code   RO          894    i.Spaceship_Data    spaceship.o
+    0x000015e8   0x0000007c   Code   RO          895    i.Spaceship_Fire    spaceship.o
+    0x00001664   0x00000050   Code   RO          896    i.Spaceship_Fire_Clear  spaceship.o
+    0x000016b4   0x00000008   Code   RO          897    i.Spaceship_Fire_List  spaceship.o
+    0x000016bc   0x00000090   Code   RO          898    i.Spaceship_Fire_MoveUp  spaceship.o
+    0x0000174c   0x00000004   Code   RO          899    i.Spaceship_Fire_Number  spaceship.o
+    0x00001750   0x0000003c   Code   RO          900    i.Spaceship_Init    spaceship.o
+    0x0000178c   0x00000014   Code   RO          901    i.Spaceship_Move    spaceship.o
+    0x000017a0   0x00000024   Code   RO          902    i.Spaceship_Position  spaceship.o
+    0x000017c4   0x00000008   Code   RO          903    i.Spaceship_Shield  spaceship.o
+    0x000017cc   0x00000008   Code   RO          904    i.Spaceship_Shield_Data  spaceship.o
+    0x000017d4   0x00000040   Code   RO          905    i.Spaceship_Shield_Init  spaceship.o
+    0x00001814   0x000000b6   Code   RO          103    i.Spcaeship_Alive   spaceinvaders.o
+    0x000018ca   0x00000002   PAD
+    0x000018cc   0x000000d0   Code   RO          104    i.Spcaeship_Shield_Status  spaceinvaders.o
+    0x0000199c   0x00000050   Code   RO          448    i.SpriteDraw        sprite.o
+    0x000019ec   0x000000b4   Code   RO          449    i.SpriteMove        sprite.o
+    0x00001aa0   0x000000d0   Code   RO          450    i.Sprite_Fire       sprite.o
+    0x00001b70   0x0000001c   Code   RO          451    i.Sprite_Fire_Clear  sprite.o
+    0x00001b8c   0x00000008   Code   RO          452    i.Sprite_Fire_List  sprite.o
+    0x00001b94   0x00000088   Code   RO          453    i.Sprite_Fire_MoveDown  sprite.o
+    0x00001c1c   0x00000020   Code   RO          455    i.Sprite_Init       sprite.o
+    0x00001c3c   0x00000010   Code   RO          456    i.Sprite_Is_Killed  sprite.o
+    0x00001c4c   0x00000008   Code   RO          457    i.Sprite_List       sprite.o
+    0x00001c54   0x0000001c   Code   RO          458    i.Sprite_Move       sprite.o
+    0x00001c70   0x0000000c   Code   RO          459    i.Sprites_Alive_Count  sprite.o
+    0x00001c7c   0x00000004   Code   RO          460    i.Sprites_Fire_Number  sprite.o
+    0x00001c80   0x000000fc   Code   RO          105    i.Sprites_Life      spaceinvaders.o
+    0x00001d7c   0x0000000c   Code   RO          461    i.Sprites_Number    sprite.o
+    0x00001d88   0x00000070   Code   RO          573    i.Switch_Init       switch.o
+    0x00001df8   0x0000000c   Code   RO          342    i.SysTick_Handler   sound.o
+    0x00001e04   0x00000030   Code   RO          343    i.SysTick_Init      sound.o
+    0x00001e34   0x000001c4   Code   RO          220    i.TExaS_Init        texas.o
+    0x00001ff8   0x0000006c   Code   RO          462    i.TheMonster        sprite.o
+    0x00002064   0x00000024   Code   RO          106    i.Timer2A_Handler   spaceinvaders.o
+    0x00002088   0x00000070   Code   RO          107    i.Timer2_Init       spaceinvaders.o
+    0x000020f8   0x00000020   Code   RO          222    i.Timer4A_Handler   texas.o
+    0x00002118   0x00000030   Code   RO          223    i.Timer5A_Handler   texas.o
+    0x00002148   0x000000c0   Code   RO          226    i.UART0_Init        texas.o
+    0x00002208   0x0000004c   Code   RO           22    i.lcdwrite          nokia5110.o
+    0x00002254   0x000000f4   Code   RO          108    i.main              spaceinvaders.o
+    0x00002348   0x000001e0   Data   RO           24    .constdata          nokia5110.o
+    0x00002528   0x00000168   Data   RO          231    .constdata          texas.o
+    0x00002690   0x00003c4b   Data   RO          344    .constdata          sound.o
+    0x000062db   0x000010b2   Data   RO          640    .constdata          graphics.o
+    0x0000738d   0x00000003   PAD
+    0x00007390   0x00000020   Data   RO         1201    Region$$Table       anon$$obj.o
+
+
+    Execution Region ER_RW (Base: 0x20000000, Size: 0x00000074, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x00000017   Data   RW          111    .data               spaceinvaders.o
+    0x20000017   0x00000001   PAD
+    0x20000018   0x00000034   Data   RW          232    .data               texas.o
+    0x2000004c   0x0000000c   Data   RW          345    .data               sound.o
+    0x20000058   0x0000000b   Data   RW          465    .data               sprite.o
+    0x20000063   0x00000001   PAD
+    0x20000064   0x0000000c   Data   RW          908    .data               spaceship.o
+    0x20000070   0x00000004   Data   RW           91    DATA                random.o
+
+
+    Execution Region ER_ZI (Base: 0x20000074, Size: 0x0000093c, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000074   0x000001f8   Zero   RW           23    .bss                nokia5110.o
+    0x2000026c   0x00000010   Zero   RW          109    .bss                spaceinvaders.o
+    0x2000027c   0x00000004   PAD
+    0x20000280   0x00000038   Zero   RW          230    .bss                texas.o
+    0x200002b8   0x000001b4   Zero   RW          463    .bss                sprite.o
+    0x2000046c   0x000000e0   Zero   RW          906    .bss                spaceship.o
+    0x2000054c   0x00000060   Zero   RW         1078    .bss                c_w.l(libspace.o)
+    0x200005ac   0x00000004   PAD
+    0x200005b0   0x00000000   Zero   RW            2    HEAP                startup.o
+    0x200005b0   0x00000400   Zero   RW            1    STACK               startup.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       252         44          0          0          0        858   adc.o
+       140         34          0          0          0        821   dac.o
+       296        148       4274          0          0      13722   graphics.o
+       152         36          0          0          0        777   led.o
+      1466         76        480          0        504       9397   nokia5110.o
+        64         14          0          4          0        204   random.o
+       260         66      15435         12          0       4514   sound.o
+      1538        196          0         23         16       8328   spaceinvaders.o
+       634         64          0         12        224       7346   spaceship.o
+      1980        210          0         11        436       9624   sprite.o
+       692        632          0          0       1024        908   startup.o
+       160         36          0          0          0       1274   switch.o
+      1120        244        360         52         56      15648   texas.o
+
+    ----------------------------------------------------------------------
+      8760       1800      20584        116       2264      73421   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+         6          0          3          2          4          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         8          0          0          0          0         68   __main.o
+        52          8          0          0          0          0   __scatter.o
+        26          0          0          0          0          0   __scatter_copy.o
+        28          0          0          0          0          0   __scatter_zi.o
+        12          0          0          0          0         72   exit.o
+         6          0          0          0          0        152   heapauxi.o
+         0          0          0          0          0          0   indicate_semi.o
+         2          0          0          0          0          0   libinit.o
+         2          0          0          0          0          0   libinit2.o
+         2          0          0          0          0          0   libshutdown.o
+         2          0          0          0          0          0   libshutdown2.o
+         8          4          0          0         96         68   libspace.o
+         0          0          0          0          0          0   rtentry.o
+        12          0          0          0          0          0   rtentry2.o
+         6          0          0          0          0          0   rtentry4.o
+         2          0          0          0          0          0   rtexit.o
+        10          0          0          0          0          0   rtexit2.o
+        12          4          0          0          0         68   sys_exit.o
+        74          0          0          0          0         80   sys_stackheap_outer.o
+         2          0          0          0          0         68   use_no_semi.o
+
+    ----------------------------------------------------------------------
+       272         16          0          0        100        576   Library Totals
+         6          0          0          0          4          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       266         16          0          0         96        576   c_w.l
+
+    ----------------------------------------------------------------------
+       272         16          0          0        100        576   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      9032       1816      20584        116       2364      67965   Grand Totals
+      9032       1816      20584        116       2364      67965   ELF Image Totals
+      9032       1816      20584        116          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                29616 (  28.92kB)
+    Total RW  Size (RW Data + ZI Data)              2480 (   2.42kB)
+    Total ROM Size (Code + RO Data + RW Data)      29732 (  29.04kB)
+
+==============================================================================
+
